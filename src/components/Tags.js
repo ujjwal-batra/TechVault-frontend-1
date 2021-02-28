@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import "font-awesome/css/font-awesome.min.css";
 
 const RightTags = () => {
   const [topic, setTopic] = React.useState([]);
@@ -26,7 +27,7 @@ const RightTags = () => {
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, []);
+  }, [topic]);
 
   React.useEffect(() => {
     try {
@@ -51,15 +52,15 @@ const RightTags = () => {
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, []);
+  }, [company]);
 
   return (
     <div>
       <div className="tagsContainer">
         <div className="tags-heading">
-          <h3>
-            <span>▼</span> Topics
-          </h3>
+          <span class="text-300 text-lg tags-title">
+            <i class="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
+          </span>
         </div>
         <div className="tags-values">
           {topics.map((e) => (
@@ -68,6 +69,7 @@ const RightTags = () => {
             </div>
           ))}
         </div>
+
         <div className="tag-showmore">
           <h6>
             <span>Show More</span>
@@ -77,9 +79,9 @@ const RightTags = () => {
 
       <div className="tagsContainer">
         <div className="tags-heading">
-          <h3>
-            <span>▼</span> Company
-          </h3>
+          <span class="text-300 text-lg tags-title">
+            <i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Companies
+          </span>
         </div>
         <div className="tags-values">
           {company.map((e) => (
