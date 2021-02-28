@@ -16,12 +16,6 @@ function App() {
           <div className="mainContent left-tab">
             <MainContent />
            </div> 
-          <div className=" mainContent left-tab">
-             <MainContent />
-          </div>
-          <div className="mainContent left-tab">
-            <MainContent />
-          </div>
         </div>
 
         <div className="right-container">
@@ -32,5 +26,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

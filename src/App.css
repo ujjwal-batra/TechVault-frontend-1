@@ -55,7 +55,7 @@ main{
 }
 .left-container .left-tab{
   height: 25vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-bottom: 15px;
 }
 .left-container .left-tab:nth-of-type(3){
@@ -110,6 +110,13 @@ main{
 
 
 /* Homepage blogs css */
+.flex_box{
+  display: flex;
+  padding: 1%;
+  border: 1px solid black;
+  margin: 1em;
+  border-radius: 10px;
+}
 .mainContent{
     display: flex;
 }
