@@ -12,7 +12,7 @@ const RightTags = () => {
       fetch("http://localhost:8080/home/keywordsCount")
         .then((results) => results.json())
         .then((data) => {
-          for (var i = 1; i < 6; i++) {
+          for (var i = 0; i < 5; i++) {
             var x = {
               keyword: data[i].keyword,
               frequency: data[i].frequency,
@@ -33,12 +33,11 @@ const RightTags = () => {
       fetch("http://localhost:8080/home/blogsCount")
         .then((results) => results.json())
         .then((data) => {
-          for (var i = 0; i < data.length; i++) {
+          for (var i = 0; i < 5; i++) {
             var x = {
               company: data[i].company,
               count: data[i].count,
             };
-            console.log(data[i].company);
             if (
               company.indexOf(x) === -1 &&
               x.company != null &&
