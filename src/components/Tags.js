@@ -70,10 +70,15 @@ const RightTags = () => {
           ))}
         </div>
 
-        <div className="tag-showmore">
+        {/* <div className="tag-showmore">
           <h6>
             <span>Show More</span>
           </h6>
+        </div> */}
+
+        <div className="tag-showmore">
+          <span className="tag-showmore">Show More</span>&nbsp;
+          <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
         </div>
       </div>
 
@@ -91,10 +96,14 @@ const RightTags = () => {
             </div>
           ))}
         </div>
-        <div className="tag-showmore">
+        {/* <div className="tag-showmore">
           <h6>
             <span>Show More</span>
           </h6>
+        </div> */}
+        <div className="tag-showmore">
+          <span className="tag-showmore">Show More</span>&nbsp;
+          <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
         </div>
       </div>
     </div>
