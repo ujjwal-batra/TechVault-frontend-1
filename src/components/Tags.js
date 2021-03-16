@@ -64,7 +64,7 @@ const RightTags = () => {
         <div className="tags-values">
           {topics.map((e) => (
             <div style={{ background: `#F4E8C8` }}>
-              {e.keyword} <span>({e.frequency})</span>
+              {e.keyword} <span> ({e.frequency})</span>
             </div>
           ))}
         </div>

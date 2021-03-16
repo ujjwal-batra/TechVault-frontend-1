@@ -3,17 +3,21 @@ import MainContent from "./components/MainContent";
 import RightTags from "./components/Tags";
 import Header from "./components/header";
 import Navbar from "./components/navbar_homepage";
+import React, { useState, useEffect } from "react";
 
 function App() {
+
+  const [selevtedNav, setSelectedNav] = useState('latest'); 
+  
   return (
     <div className="app">
       <Header />
-      <Navbar />
+      <Navbar setSelectedNav={setSelectedNav}/>
 
       <main>
         <div className="left-container">
           <div className="mainContent left-tab">
-            <MainContent />
+            <MainContent selevtedNav={selevtedNav}/>
           </div>
         </div>
 
@@ -21,8 +25,10 @@ function App() {
           <RightTags />
         </div>
       </main>
+
     </div>
-  );
-}
+  )
+};
+
 
 export default App;

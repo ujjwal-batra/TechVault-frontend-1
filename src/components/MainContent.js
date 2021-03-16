@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-const MainContent = () => {
+const MainContent = (selevtedNav) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
-  React.useEffect(async () => {
+  React.useEffect(() => {
     try {
-      await fetch("http://localhost:8080/home/latest/")
+      console.log(selevtedNav);
+      fetch("http://localhost:8080/home/"+selevtedNav.selevtedNav+"/")
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {
@@ -27,12 +28,13 @@ const MainContent = () => {
               blog.push(x);
             }
           }
-          setBlogs(blog);
+          setBlogs( arr => [...arr, `${arr.length}`]);
+          blog.length = 0
         }); // fetching latest blogs
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, []);
+  }, [selevtedNav]);
 
   return (
     <div>
