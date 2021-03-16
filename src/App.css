@@ -103,7 +103,12 @@ main {
 }
 
 .tag-showmore {
+  font-size: 16px;
+  width: 100%;
   margin: 10px 0px;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  margin: 10px 0 20px;
 }
 
 .tag-showmore h6 {
@@ -114,11 +119,11 @@ main {
   margin: 10px 0 20px;
 }
 
-.tag-showmore h6 span {
+/* .tag-showmore h6 span {
   font-size: 10px;
   background: rgb(185, 185, 185);
   padding: 3px 10px;
-}
+} */
 
 
 /* Homepage blogs css */
