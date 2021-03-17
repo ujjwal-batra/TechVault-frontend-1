@@ -62,7 +62,7 @@ const MainContent = (selevtedNav) => {
             </div>
             <div className="statsContainer main-tab">
               <div>
-                <span>★</span> {e.likes}
+                <span>👍</span> {e.likes}
               </div>
               <div>{e.comments} Comments</div>
               <div>Blog</div>

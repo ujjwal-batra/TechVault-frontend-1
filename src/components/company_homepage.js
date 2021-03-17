@@ -6,16 +6,25 @@ const RightTags = () => {
   const [company, setCompany] = React.useState([]);
   const [companies, setCompanies] = React.useState([]);
   const [search, setSearch] = React.useState("");
+  const [selectedCompanies, setSelectedCompanies] = React.useState([]);
 
   const onchange = (e) => {
     setSearch(e.target.value);
-    console.log(e.target.value)
+    console.log(e.target.value);
   };
 
-  const filteredTopics = companies.filter(x => {
+  const filteredTopics = companies.filter((x) => {
     return x.company.toLowerCase().indexOf(search.toLowerCase()) !== -1;
   });
-  
+
+  const onClickTopic = (e) => {
+    setSelectedCompanies((arr) => [...arr, e]);
+  };
+
+  const onClickDeselct = (e) => {
+    setSelectedCompanies(selectedCompanies.filter((x) => x !== e));
+  };
+
   React.useEffect(() => {
     try {
       fetch("http://localhost:8080/home/blogsCount")
@@ -43,27 +52,41 @@ const RightTags = () => {
 
   return (
     <div>
-
       <div className="tagsContainer">
         <div className="tags-heading">
           <span class="text-300 text-lg tags-title">
             <i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Companies
           </span>
+
+          <div className="tags-values">
+            {selectedCompanies.map((e) => (
+              <div style={{ background: `#F4E8C8` }}>
+                {e} <span onClick={() => onClickDeselct(e)}>&#10006;</span>
+              </div>
+            ))}
+          </div>
           <div>
-            <input type="text" name="topicSearch" placeholder="Search Topic..." onChange={onchange} />
+            <input
+              type="text"
+              name="topicSearch"
+              placeholder="Search Topic..."
+              onChange={onchange}
+            />
           </div>
         </div>
         <div className="tags-values">
-          {filteredTopics.slice(0,10).map((e) => (
-            <div style={{ background: `#F4E8C8` }}>
+          {filteredTopics.slice(0, 10).map((e) => (
+            <div
+              style={{ background: `#F4E8C8` }}
+              onClick={() => onClickTopic(e.company)}
+            >
               {e.company}
               <span>({e.count})</span>
             </div>
           ))}
         </div>
-        
-        <hr />
 
+        <hr />
       </div>
     </div>
   );
