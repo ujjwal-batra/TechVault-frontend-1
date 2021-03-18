@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "font-awesome/css/font-awesome.min.css";
 
-const RightTags = () => {
+const RightTags = ({setPassedCompany}) => {
   const [company, setCompany] = React.useState([]);
   const [companies, setCompanies] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const [selectedCompanies, setSelectedCompanies] = React.useState([]);
+  const [selectedCompanies, setSelectedCompanies] = React.useState();
 
   const onchange = (e) => {
     setSearch(e.target.value);
@@ -18,11 +18,13 @@ const RightTags = () => {
   });
 
   const onClickTopic = (e) => {
-    setSelectedCompanies((arr) => [...arr, e]);
+    setSelectedCompanies(e);
+    setPassedCompany(e);
   };
 
   const onClickDeselct = (e) => {
-    setSelectedCompanies(selectedCompanies.filter((x) => x !== e));
+    setSelectedCompanies("");
+    setPassedCompany("");
   };
 
   React.useEffect(() => {
@@ -59,11 +61,10 @@ const RightTags = () => {
           </span>
 
           <div className="tags-values">
-            {selectedCompanies.map((e) => (
               <div style={{ background: `#F4E8C8` }}>
-                {e} <span onClick={() => onClickDeselct(e)}>&#10006;</span>
+                {selectedCompanies} <span onClick={() => onClickDeselct(selectedCompanies)}>&#10006;</span>
               </div>
-            ))}
+          
           </div>
           <div>
             <input

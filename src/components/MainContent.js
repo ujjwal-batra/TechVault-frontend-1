@@ -1,40 +1,97 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-const MainContent = (selevtedNav) => {
+const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
   React.useEffect(() => {
     try {
-      console.log(selevtedNav);
-      fetch("http://localhost:8080/home/"+selevtedNav.selevtedNav+"/")
-        .then((results) => results.json())
-        .then((data) => {
-          for (var i = 0; i < data.length; i++) {
-            var x = {
-              id: data[i].id,
-              author: data[i].author,
-              company: data[i].company,
-              link: data[i].link,
-              date: data[i].date,
-              blogAbstract: data[i].blogAbstract,
-              title: data[i].title,
-              uuid: data[i].uuid,
-              likes: data[i].likes,
-              views: data[i].views,
-              comments: data[i].comments,
-            };
-            if (blog.indexOf(x) == -1) {
-              blog.push(x);
+      console.log(fromSiblings);
+      if(fromSiblings.passedTopics == "" && fromSiblings.passedCompany == ""){
+        fetch("http://localhost:8080/home/"+fromSiblings.selevtedNav+"/")
+          .then((results) => results.json())
+          .then((data) => {
+            for (var i = 0; i < data.length; i++) {
+              var x = {
+                id: data[i].id,
+                author: data[i].author,
+                company: data[i].company,
+                link: data[i].link,
+                date: data[i].date,
+                blogAbstract: data[i].blogAbstract,
+                title: data[i].title,
+                uuid: data[i].uuid,
+                likes: data[i].likes,
+                views: data[i].views,
+                comments: data[i].comments,
+                keywords: data[i].keywords
+              };
+              if (blog.indexOf(x) == -1) {
+                blog.push(x);
+              }
             }
-          }
-          setBlogs( arr => [...arr, `${arr.length}`]);
-          blog.length = 0
-        }); // fetching latest blogs
+            setBlogs( arr => [...arr, `${arr.length}`]);
+            blog.length = 0
+          }); // fetching latest blogs
+      }
+      else if(fromSiblings.passedCompany != ""){
+        fetch("http://localhost:8080/search/company/"+fromSiblings.passedCompany+"/")
+          .then((results) => results.json())
+          .then((data) => {
+            for (var i = 0; i < data.length; i++) {
+              var x = {
+                id: data[i].id,
+                author: data[i].author,
+                company: data[i].company,
+                link: data[i].link,
+                date: data[i].date,
+                blogAbstract: data[i].blogAbstract,
+                title: data[i].title,
+                uuid: data[i].uuid,
+                likes: data[i].likes,
+                views: data[i].views,
+                comments: data[i].comments,
+                keywords: data[i].keywords
+              };
+              if (blog.indexOf(x) == -1) {
+                blog.push(x);
+              }
+            }
+            setBlogs( arr => [...arr, `${arr.length}`]);
+            blog.length = 0
+          }); // fetching latest blogs
+      }
+      else{
+        fetch("http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"/")
+          .then((results) => results.json())
+          .then((data) => {
+            for (var i = 0; i < data.length; i++) {
+              var x = {
+                id: data[i].id,
+                author: data[i].author,
+                company: data[i].company,
+                link: data[i].link,
+                date: data[i].date,
+                blogAbstract: data[i].blogAbstract,
+                title: data[i].title,
+                uuid: data[i].uuid,
+                likes: data[i].likes,
+                views: data[i].views,
+                comments: data[i].comments,
+                keywords: data[i].keywords
+              };
+              if (blog.indexOf(x) == -1) {
+                blog.push(x);
+              }
+            }
+            setBlogs( arr => [...arr, `${arr.length}`]);
+            blog.length = 0
+          }); // fetching latest blogs
+      }
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, [selevtedNav]);
+  }, [fromSiblings]);
 
   return (
     <div>
@@ -55,9 +112,10 @@ const MainContent = (selevtedNav) => {
                 <p>{e.blogAbstract}[...]</p>
               </div>
               <div className="content-tags">
-                <div>Cloud</div>
-                <div>Java</div>
-                <div>Microservices</div>
+                {e.keywords.map(function(name, index){
+                    return <div key={ index }>{name}</div>;
+                  })}
+                  
               </div>
             </div>
             <div className="statsContainer main-tab">
