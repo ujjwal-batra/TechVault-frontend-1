@@ -4,11 +4,11 @@ import "font-awesome/css/font-awesome.min.css";
 
 let tempSelectedTopics = [];
 
-const RightTags = () => {
+const RightTags = ({setPassedTopic}) => {
   const [topic, setTopic] = React.useState([]);
   const [topics, setTopics] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const [selectedTopics, setSelectedTopics] = React.useState([]);
+  const [selectedTopics, setSelectedTopics] = React.useState(null);
 
   const onchange = (e) => {
     setSearch(e.target.value);
@@ -20,11 +20,14 @@ const RightTags = () => {
   });
 
   const onClickTopic = (e) => {
-    setSelectedTopics((arr) => [...arr, e]);
+    setSelectedTopics(e);
+    console.log(e);
+    setPassedTopic(e);
   };
 
   const onClickDeselct = (e) => {
-    setSelectedTopics(selectedTopics.filter((x) => x !== e));
+    setSelectedTopics("");
+    setPassedTopic("");
   };
 
   React.useEffect(() => {
@@ -57,11 +60,10 @@ const RightTags = () => {
           </span>
 
           <div className="tags-values">
-            {selectedTopics.map((e) => (
               <div style={{ background: `#F4E8C8` }}>
-                {e} <span onClick={() => onClickDeselct(e)}>&#10006;</span>
+                {selectedTopics} <span onClick={() => onClickDeselct({selectedTopics})}>&#10006;</span>
               </div>
-            ))}
+            
           </div>
 
           <div>
