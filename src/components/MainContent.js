@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
+  
 
   const onClickTopic = (e) => {
     fromSiblings.setPassedTopic(e);
@@ -76,7 +77,7 @@ const MainContent = (fromSiblings) => {
           }
           setBlogs((arr) => [...arr, `${arr.length}`]);
           blog.length = 0;
-        }); // fetching latest blogs
+        }); // fetching latest blog
     } catch (err) {
       alert(err); // Failed to fetch
     }
