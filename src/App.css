@@ -94,6 +94,8 @@ main {
 }
 
 .tags-values div {
+  line-height: 1.25;
+  white-space: wrap;
   cursor: pointer;
   border: 1px solid rgb(71, 71, 71);
   border-radius: 5px;
@@ -102,14 +104,20 @@ main {
   padding: 4px;
 }
 
-.tag-showmore {
-  cursor: pointer;
-  font-size: 16px;
+.search-tags {
+  line-height: 1.25;
+  padding: 4px;
+  margin: 3px 5px;
+  display: inline-block;
+  position: relative;
   width: 100%;
-  margin: 10px 0px;
-  text-align: center;
-  border-bottom: 1px solid #000;
-  margin: 10px 0 20px;
+  height: 32px;
+  white-space: wrap;
+}
+
+.search-tags-input {
+  padding: 6.3px 10px;
+  font-size: 12px;
 }
 
 /* Homepage blogs css */
@@ -210,10 +218,10 @@ main {
   padding: 6px 8px;
 }
 
-.pagination_button{
+.pagination_button {
   padding: 10px;
 }
 
-.page-selector{
+.page-selector {
   text-align: center
 }
