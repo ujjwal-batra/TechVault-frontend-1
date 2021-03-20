@@ -1,32 +1,52 @@
-
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-
 
 const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
-  
 
   const onClickTopic = (e) => {
     fromSiblings.setPassedTopic(e);
-  }
+  };
 
   React.useEffect(() => {
     try {
       console.log(fromSiblings);
-      let link, cond = false;
-      if(fromSiblings.passedTopics == "" && fromSiblings.passedCompany == ""){
-        link = "http://localhost:8080/home/"+fromSiblings.selevtedNav+"?pageNo="+fromSiblings.pageNo
-      }
-      else if(fromSiblings.passedCompany != "" && fromSiblings.passedTopics==""){
-        link = "http://localhost:8080/search/company/"+fromSiblings.passedCompany+"?pageNo="+fromSiblings.pageNo
-      }
-      else if(fromSiblings.passedCompany == "" && fromSiblings.passedTopics!=""){
-        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"?pageNo="+fromSiblings.pageNo
-      }
-      else{
-        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"?pageNo="+fromSiblings.pageNo
+      let link,
+        cond = false;
+      if (
+        fromSiblings.passedTopics === "" &&
+        fromSiblings.passedCompany === ""
+      ) {
+        link =
+          "http://localhost:8080/home/" +
+          fromSiblings.selevtedNav +
+          "?pageNo=" +
+          fromSiblings.pageNo;
+      } else if (
+        fromSiblings.passedCompany !== "" &&
+        fromSiblings.passedTopics === ""
+      ) {
+        link =
+          "http://localhost:8080/search/company/" +
+          fromSiblings.passedCompany +
+          "?pageNo=" +
+          fromSiblings.pageNo;
+      } else if (
+        fromSiblings.passedCompany === "" &&
+        fromSiblings.passedTopics !== ""
+      ) {
+        link =
+          "http://localhost:8080/search/keyword/" +
+          fromSiblings.passedTopics +
+          "?pageNo=" +
+          fromSiblings.pageNo;
+      } else {
+        link =
+          "http://localhost:8080/search/keyword/" +
+          fromSiblings.passedTopics +
+          "?pageNo=" +
+          fromSiblings.pageNo;
         cond = true;
       }
       console.log(link);
@@ -46,19 +66,17 @@ const MainContent = (fromSiblings) => {
               likes: data[i].likes,
               views: data[i].views,
               comments: data[i].comments,
-              keywords: data[i].keywords
+              keywords: data[i].keywords,
             };
-            if (blog.indexOf(x) == -1) {
-              if(cond == true && fromSiblings.passedCompany == x.company)
+            if (blog.indexOf(x) === -1) {
+              if (cond === true && fromSiblings.passedCompany === x.company)
                 blog.push(x);
-              else if(cond == false)
-                blog.push(x);
+              else if (cond === false) blog.push(x);
             }
           }
-          setBlogs( arr => [...arr, `${arr.length}`]);
-          blog.length = 0
+          setBlogs((arr) => [...arr, `${arr.length}`]);
+          blog.length = 0;
         }); // fetching latest blogs
-      
     } catch (err) {
       alert(err); // Failed to fetch
     }
@@ -83,10 +101,13 @@ const MainContent = (fromSiblings) => {
                 <p>{e.blogAbstract}[...]</p>
               </div>
               <div className="content-tags">
-                {e.keywords.slice(0,3).map(function(name, index){
-                    return <div key={ index } onClick={() => onClickTopic(name)}>{name}</div>;
-                  })}
-                  
+                {e.keywords.slice(0, 3).map(function (name, index) {
+                  return (
+                    <div key={index} onClick={() => onClickTopic(name)}>
+                      {name}
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="statsContainer main-tab">
@@ -99,7 +120,6 @@ const MainContent = (fromSiblings) => {
           </div>
         </div>
       ))}
-      
     </div>
   );
 };

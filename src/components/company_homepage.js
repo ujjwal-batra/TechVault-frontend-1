@@ -2,20 +2,24 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "font-awesome/css/font-awesome.min.css";
 
-const RightTags = ({setPassedCompany}) => {
+const RightTags = ({ setPassedCompany }) => {
   const [company, setCompany] = React.useState([]);
   const [companies, setCompanies] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [selectedCompanies, setSelectedCompanies] = React.useState();
 
   const SelectedTagDisplay = () => {
-    if(selectedCompanies == null || selectedCompanies == "")
-      return null;
+    if (selectedCompanies == null || selectedCompanies == "") return null;
     else
-      return  <div style={{ background: `#F4E8C8` }}>
-                {selectedCompanies} <span onClick={() => onClickDeselct(selectedCompanies)}>&#10006;</span>
-              </div>
-  }
+      return (
+        <div style={{ background: `#F4E8C8` }}>
+          {selectedCompanies}{" "}
+          <span onClick={() => onClickDeselct(selectedCompanies)}>
+            &#10006;
+          </span>
+        </div>
+      );
+  };
 
   const onchange = (e) => {
     setSearch(e.target.value);
@@ -70,14 +74,14 @@ const RightTags = ({setPassedCompany}) => {
           </span>
 
           <div className="tags-values">
-              <SelectedTagDisplay />
-          
+            <SelectedTagDisplay />
           </div>
-          <div>
+          <div className="search-tags">
             <input
+              class="search-tags-input"
               type="text"
               name="topicSearch"
-              placeholder="Search Topic..."
+              placeholder="Search for Tags..."
               onChange={onchange}
             />
           </div>
@@ -89,7 +93,7 @@ const RightTags = ({setPassedCompany}) => {
               onClick={() => onClickTopic(e.company)}
             >
               {e.company}
-              <span>({e.count})</span>
+              <span> | {e.count}</span>
             </div>
           ))}
         </div>
