@@ -1,93 +1,64 @@
+import Pagination from "./pagination";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+
 
 const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
+  const [pageNo, setPageNo] = React.useState([]);
+
+  const onClickTopic = (e) => {
+    fromSiblings.setPassedTopic(e);
+  }
+
   React.useEffect(() => {
     try {
       console.log(fromSiblings);
+      let link, cond = false;
       if(fromSiblings.passedTopics == "" && fromSiblings.passedCompany == ""){
-        fetch("http://localhost:8080/home/"+fromSiblings.selevtedNav+"/")
-          .then((results) => results.json())
-          .then((data) => {
-            for (var i = 0; i < data.length; i++) {
-              var x = {
-                id: data[i].id,
-                author: data[i].author,
-                company: data[i].company,
-                link: data[i].link,
-                date: data[i].date,
-                blogAbstract: data[i].blogAbstract,
-                title: data[i].title,
-                uuid: data[i].uuid,
-                likes: data[i].likes,
-                views: data[i].views,
-                comments: data[i].comments,
-                keywords: data[i].keywords
-              };
-              if (blog.indexOf(x) == -1) {
-                blog.push(x);
-              }
-            }
-            setBlogs( arr => [...arr, `${arr.length}`]);
-            blog.length = 0
-          }); // fetching latest blogs
+        link = "http://localhost:8080/home/"+fromSiblings.selevtedNav+"/"
       }
-      else if(fromSiblings.passedCompany != ""){
-        fetch("http://localhost:8080/search/company/"+fromSiblings.passedCompany+"/")
-          .then((results) => results.json())
-          .then((data) => {
-            for (var i = 0; i < data.length; i++) {
-              var x = {
-                id: data[i].id,
-                author: data[i].author,
-                company: data[i].company,
-                link: data[i].link,
-                date: data[i].date,
-                blogAbstract: data[i].blogAbstract,
-                title: data[i].title,
-                uuid: data[i].uuid,
-                likes: data[i].likes,
-                views: data[i].views,
-                comments: data[i].comments,
-                keywords: data[i].keywords
-              };
-              if (blog.indexOf(x) == -1) {
-                blog.push(x);
-              }
-            }
-            setBlogs( arr => [...arr, `${arr.length}`]);
-            blog.length = 0
-          }); // fetching latest blogs
+      else if(fromSiblings.passedCompany != "" && fromSiblings.passedTopics==""){
+        link = "http://localhost:8080/search/company/"+fromSiblings.passedCompany+"/"
+      }
+      else if(fromSiblings.passedCompany == "" && fromSiblings.passedTopics!=""){
+        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"/"
       }
       else{
-        fetch("http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"/")
-          .then((results) => results.json())
-          .then((data) => {
-            for (var i = 0; i < data.length; i++) {
-              var x = {
-                id: data[i].id,
-                author: data[i].author,
-                company: data[i].company,
-                link: data[i].link,
-                date: data[i].date,
-                blogAbstract: data[i].blogAbstract,
-                title: data[i].title,
-                uuid: data[i].uuid,
-                likes: data[i].likes,
-                views: data[i].views,
-                comments: data[i].comments,
-                keywords: data[i].keywords
-              };
-              if (blog.indexOf(x) == -1) {
-                blog.push(x);
-              }
-            }
-            setBlogs( arr => [...arr, `${arr.length}`]);
-            blog.length = 0
-          }); // fetching latest blogs
+        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"/"
+        cond = true;
       }
+
+      fetch(link)
+        .then((results) => results.json())
+        .then((data) => {
+          for (var i = 0; i < data.length; i++) {
+            var x = {
+              id: data[i].id,
+              author: data[i].author,
+              company: data[i].company,
+              link: data[i].link,
+              date: data[i].date,
+              blogAbstract: data[i].blogAbstract,
+              title: data[i].title,
+              uuid: data[i].uuid,
+              likes: data[i].likes,
+              views: data[i].views,
+              comments: data[i].comments,
+              keywords: data[i].keywords
+            };
+            if (blog.indexOf(x) == -1) {
+              if(cond == true && fromSiblings.passedCompany == x.company)
+                blog.push(x);
+              else if(cond == false)
+                blog.push(x);
+            }
+          }
+          setBlogs( arr => [...arr, `${arr.length}`]);
+          blog.length = 0
+        }); // fetching latest blogs
+      
     } catch (err) {
       alert(err); // Failed to fetch
     }
@@ -113,7 +84,7 @@ const MainContent = (fromSiblings) => {
               </div>
               <div className="content-tags">
                 {e.keywords.map(function(name, index){
-                    return <div key={ index }>{name}</div>;
+                    return <div key={ index } onClick={() => onClickTopic(name)}>{name}</div>;
                   })}
                   
               </div>
@@ -128,6 +99,9 @@ const MainContent = (fromSiblings) => {
           </div>
         </div>
       ))}
+      <div>
+        <Pagination setPageNo={setPageNo}/>
+      </div>
     </div>
   );
 };
