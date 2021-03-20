@@ -83,7 +83,7 @@ const MainContent = (fromSiblings) => {
                 <p>{e.blogAbstract}[...]</p>
               </div>
               <div className="content-tags">
-                {e.keywords.map(function(name, index){
+                {e.keywords.slice(0,3).map(function(name, index){
                     return <div key={ index } onClick={() => onClickTopic(name)}>{name}</div>;
                   })}
                   
