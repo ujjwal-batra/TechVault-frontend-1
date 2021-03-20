@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.min.css";
 
 let tempSelectedTopics = [];
 
-const RightTags = ({setPassedTopic}) => {
+const RightTags = ({setPassedTopic}, passedTopics) => {
   const [topic, setTopic] = React.useState([]);
   const [topics, setTopics] = React.useState([]);
   const [search, setSearch] = React.useState("");

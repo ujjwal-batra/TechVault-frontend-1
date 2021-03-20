@@ -20,12 +20,12 @@ function App() {
       <main>
         <div className="left-container">
           <div className="mainContent left-tab">
-            <MainContent selevtedNav={selevtedNav} passedTopics={passedTopics} passedCompany={passedCompany} />
+            <MainContent setPassedTopic={setPassedTopic} selevtedNav={selevtedNav} passedTopics={passedTopics} passedCompany={passedCompany} />
           </div>
         </div>
 
         <div className="right-container">
-          <Topics setPassedTopic={setPassedTopic} />
+          <Topics passedTopics={passedTopics} setPassedTopic={setPassedTopic} />
           <Company setPassedCompany={setPassedCompany} />
         </div>
       </main>

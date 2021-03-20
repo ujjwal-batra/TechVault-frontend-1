@@ -1,9 +1,17 @@
+import Pagination from "./pagination";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+
 
 const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
+  const [pageNo, setPageNo] = React.useState([]);
+
+  const onClickTopic = (e) => {
+    fromSiblings.setPassedTopic(e);
+  }
+
   React.useEffect(() => {
     try {
       console.log(fromSiblings);
@@ -76,7 +84,7 @@ const MainContent = (fromSiblings) => {
               </div>
               <div className="content-tags">
                 {e.keywords.map(function(name, index){
-                    return <div key={ index }>{name}</div>;
+                    return <div key={ index } onClick={() => onClickTopic(name)}>{name}</div>;
                   })}
                   
               </div>
@@ -91,6 +99,9 @@ const MainContent = (fromSiblings) => {
           </div>
         </div>
       ))}
+      <div>
+        <Pagination setPageNo={setPageNo}/>
+      </div>
     </div>
   );
 };
