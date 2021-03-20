@@ -199,14 +199,6 @@ main {
 }
 
 .content-tags div {
-  /* 
-  font-size: 75%;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline; */
   line-height: 1;
   white-space: wrap;
   justify-content: center;
