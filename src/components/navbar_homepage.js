@@ -15,9 +15,7 @@ const header = ({setSelectedNav}) => {
           <button onClick={()=>onClickNav('latest')}>Latest</button>
           <button onClick={()=>onClickNav('liked')}>Top Liked</button>
           <button onClick={()=>onClickNav('viewed')}>Top Viewed</button>
-          <select name="All Types" id="allTypes">
-            <option value="alltypes">All Types</option>
-          </select>
+          
         </div>
         <div className="navSearch">
           <input

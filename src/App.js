@@ -26,7 +26,7 @@ function App() {
               <MainContent setPassedTopic={setPassedTopic} pageNo={pageNo} selevtedNav={selevtedNav} passedTopics={passedTopics} passedCompany={passedCompany} />
             </div>
             <div className="page-selector">
-              <Pagination setPageNo={setPageNo}/>
+              <Pagination setPageNo={setPageNo} />
             </div>
           </div>
           
