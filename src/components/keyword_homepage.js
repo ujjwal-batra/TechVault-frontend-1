@@ -10,6 +10,13 @@ const RightTags = ({setPassedTopic}, passedTopics) => {
   const [search, setSearch] = React.useState("");
   const [selectedTopics, setSelectedTopics] = React.useState(null);
 
+  const SelectedTagDisplay = () => {
+    if(selectedTopics == null || selectedTopics == "")
+      return null;
+    else
+      return  <div style={{ background: `#F4E8C8` }}>{selectedTopics} <span onClick={() => onClickDeselct({selectedTopics})}>&#10006;</span></div>
+  }
+
   const onchange = (e) => {
     setSearch(e.target.value);
     console.log(e.target.value);
@@ -60,10 +67,7 @@ const RightTags = ({setPassedTopic}, passedTopics) => {
           </span>
 
           <div className="tags-values">
-              <div style={{ background: `#F4E8C8` }}>
-                {selectedTopics} <span onClick={() => onClickDeselct({selectedTopics})}>&#10006;</span>
-              </div>
-            
+              <SelectedTagDisplay />
           </div>
 
           <div>

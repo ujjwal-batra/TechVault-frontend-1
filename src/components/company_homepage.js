@@ -8,6 +8,15 @@ const RightTags = ({setPassedCompany}) => {
   const [search, setSearch] = React.useState("");
   const [selectedCompanies, setSelectedCompanies] = React.useState();
 
+  const SelectedTagDisplay = () => {
+    if(selectedCompanies == null || selectedCompanies == "")
+      return null;
+    else
+      return  <div style={{ background: `#F4E8C8` }}>
+                {selectedCompanies} <span onClick={() => onClickDeselct(selectedCompanies)}>&#10006;</span>
+              </div>
+  }
+
   const onchange = (e) => {
     setSearch(e.target.value);
     console.log(e.target.value);
@@ -61,9 +70,7 @@ const RightTags = ({setPassedCompany}) => {
           </span>
 
           <div className="tags-values">
-              <div style={{ background: `#F4E8C8` }}>
-                {selectedCompanies} <span onClick={() => onClickDeselct(selectedCompanies)}>&#10006;</span>
-              </div>
+              <SelectedTagDisplay />
           
           </div>
           <div>

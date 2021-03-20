@@ -189,7 +189,7 @@ main {
 
 .content-tags {
   display: flex;
-  margin-bottom: 8px;
+  margin: 8px 0px;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -206,8 +206,8 @@ main {
   font-weight: 600;
   cursor: pointer;
   border-radius: .95em;
-  font-size: 25%;
-  padding: 4px;
+  font-size: 65%;
+  padding: 6px 8px;
 }
 
 .pagination_button{
