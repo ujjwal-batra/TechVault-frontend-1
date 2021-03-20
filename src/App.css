@@ -121,10 +121,6 @@ main {
   border-radius: 10px;
 }
 
-.mainContent {
-  display: flex;
-}
-
 .main-tab {
   border: none;
 }
@@ -212,4 +208,12 @@ main {
   border-radius: .95em;
   font-size: 25%;
   padding: 4px;
+}
+
+.pagination_button{
+  padding: 10px;
+}
+
+.page-selector{
+  text-align: center
 }

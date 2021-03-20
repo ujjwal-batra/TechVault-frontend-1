@@ -1,4 +1,4 @@
-import Pagination from "./pagination";
+
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
-  const [pageNo, setPageNo] = React.useState([]);
+  
 
   const onClickTopic = (e) => {
     fromSiblings.setPassedTopic(e);
@@ -17,19 +17,19 @@ const MainContent = (fromSiblings) => {
       console.log(fromSiblings);
       let link, cond = false;
       if(fromSiblings.passedTopics == "" && fromSiblings.passedCompany == ""){
-        link = "http://localhost:8080/home/"+fromSiblings.selevtedNav+"/"
+        link = "http://localhost:8080/home/"+fromSiblings.selevtedNav+"?pageNo="+fromSiblings.pageNo
       }
       else if(fromSiblings.passedCompany != "" && fromSiblings.passedTopics==""){
-        link = "http://localhost:8080/search/company/"+fromSiblings.passedCompany+"/"
+        link = "http://localhost:8080/search/company/"+fromSiblings.passedCompany+"?pageNo="+fromSiblings.pageNo
       }
       else if(fromSiblings.passedCompany == "" && fromSiblings.passedTopics!=""){
-        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"/"
+        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"?pageNo="+fromSiblings.pageNo
       }
       else{
-        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"/"
+        link = "http://localhost:8080/search/keyword/"+fromSiblings.passedTopics+"?pageNo="+fromSiblings.pageNo
         cond = true;
       }
-
+      console.log(link);
       fetch(link)
         .then((results) => results.json())
         .then((data) => {
@@ -99,9 +99,7 @@ const MainContent = (fromSiblings) => {
           </div>
         </div>
       ))}
-      <div>
-        <Pagination setPageNo={setPageNo}/>
-      </div>
+      
     </div>
   );
 };
