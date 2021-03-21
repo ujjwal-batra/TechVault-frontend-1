@@ -1,3 +1,9 @@
+* Clone The Repo.
+* run `yarn install`
+* run npm start
+* for fomatting all files using prettier: `yarn prettier --write .` 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
