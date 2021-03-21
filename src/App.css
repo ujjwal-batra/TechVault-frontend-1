@@ -42,7 +42,7 @@ nav {
   opacity: 1;
 }
 
-.navSearch input[type=text] {
+.navSearch input[type="text"] {
   padding: 5px;
   font-size: 16px;
   font-style: italic;
@@ -73,7 +73,6 @@ main {
   margin: 0px auto;
   width: 18%;
 }
-
 
 /* tags style sheet */
 .tags-heading h3 {
@@ -213,16 +212,16 @@ main {
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-  border-radius: .95em;
+  border-radius: 0.95em;
   font-size: 65%;
   padding: 6px 8px;
 }
 
-.navLinks{
+.navLinks {
   margin: 2%;
 }
 
-.navLinks button{
+.navLinks button {
   background: none;
   border: 1px black solid;
   padding: 2px 5px;
@@ -231,7 +230,7 @@ main {
   border-radius: 5px;
 }
 
-.navLinks select{
+.navLinks select {
   background: none;
   /* border: none; */
   padding: 5px;
@@ -246,10 +245,10 @@ main {
   border-radius: 5px;
 }
 
-.Pages-selector-section{
+.Pages-selector-section {
   padding-bottom: 30px;
 }
 
 .page-selector {
-  text-align: center
+  text-align: center;
 }
