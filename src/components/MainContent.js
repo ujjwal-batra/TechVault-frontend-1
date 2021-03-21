@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 const MainContent = (fromSiblings) => {
   const [blog, setBlog] = React.useState([]);
   const [blogs, setBlogs] = React.useState([]);
-  
 
   const onClickTopic = (e) => {
     fromSiblings.setPassedTopic(e);
@@ -113,10 +112,23 @@ const MainContent = (fromSiblings) => {
             </div>
             <div className="statsContainer main-tab">
               <div>
-                <span>👍</span> {e.likes}
+                <span>
+                  <i class="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
+                </span>{" "}
+                {e.likes}
               </div>
-              <div>{e.comments} Comments</div>
-              <div>Blog</div>
+              <div>
+                <span>
+                  <i class="fa fa-comment-o" aria-hidden="true"></i>{" "}
+                </span>
+                {e.comments} {/* Comments */}
+              </div>
+              <div>
+                <span>
+                  <i class="fa fa-book" aria-hidden="true"></i>{" "}
+                </span>
+                Blog
+              </div>
             </div>
           </div>
         </div>
