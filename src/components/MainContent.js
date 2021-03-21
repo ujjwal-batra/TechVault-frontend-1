@@ -87,7 +87,14 @@ const MainContent = (fromSiblings) => {
       {blog.map((e) => (
         <div className="container">
           <div className="flex_box">
-            <div className="blankContainer main-tab"></div>
+            <div className="blankContainer main-tab">
+              <img
+                src="https://pngimg.com/uploads/google/google_PNG19635.png"
+                alt="Company Name"
+                width="180"
+                height="180"
+              />
+            </div>
             <div className="contentContainer main-tab">
               <div className="content-heading">
                 <p>{e.title}</p>
