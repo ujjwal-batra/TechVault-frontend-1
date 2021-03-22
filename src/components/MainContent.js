@@ -54,6 +54,17 @@ const MainContent = (fromSiblings) => {
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {
+            var companyLink = data[i].link.substring(8, data[i].link.length);
+            var imgLink = "";
+            for(let j=0; j<companyLink.length; j++){
+              if(companyLink[j] == '/')
+                break;
+              imgLink += (companyLink[j]);
+            }
+            if(imgLink == "tech.ebayinc.comhttps:")
+              imgLink = "tech.ebayinc.com";
+            imgLink = "//logo.clearbit.com/" + imgLink;
+            console.log(imgLink);
             var x = {
               id: data[i].id,
               author: data[i].author,
@@ -67,6 +78,7 @@ const MainContent = (fromSiblings) => {
               views: data[i].views,
               comments: data[i].comments,
               keywords: data[i].keywords,
+              imgLink: imgLink
             };
             if (blog.indexOf(x) === -1) {
               if (cond === true && fromSiblings.passedCompany === x.company)
@@ -89,8 +101,8 @@ const MainContent = (fromSiblings) => {
           <div className="flex_box">
             <div className="blankContainer main-tab">
               <img
-                src="https://pngimg.com/uploads/google/google_PNG19635.png"
-                alt="Company Name"
+                src={e.imgLink}
+                alt="Company Logo"
                 width="180"
                 height="180"
               />
