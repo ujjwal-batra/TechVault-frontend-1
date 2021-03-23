@@ -11,7 +11,7 @@ const MainContent = (fromSiblings) => {
 
   React.useEffect(() => {
     try {
-      console.log(fromSiblings);
+      // console.log(fromSiblings);
       let link,
         cond = false;
       if (
@@ -49,7 +49,7 @@ const MainContent = (fromSiblings) => {
           fromSiblings.pageNo;
         cond = true;
       }
-      console.log(link);
+      // console.log(link);
       fetch(link)
         .then((results) => results.json())
         .then((data) => {
@@ -63,7 +63,7 @@ const MainContent = (fromSiblings) => {
             if (imgLink === "tech.ebayinc.comhttps:")
               imgLink = "tech.ebayinc.com";
             imgLink = "//logo.clearbit.com/" + imgLink + "?size=300";
-            console.log(imgLink);
+            // console.log(imgLink);
             var x = {
               id: data[i].id,
               author: data[i].author,
