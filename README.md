@@ -1,8 +1,7 @@
-* Clone The Repo.
-* run `yarn install`
-* run npm start
-* for fomatting all files using prettier: `yarn prettier --write .` 
-
+- Clone The Repo.
+- run `yarn install`
+- run npm start
+- for fomatting all files using prettier: `yarn prettier --write .`
 
 # Getting Started with Create React App
 

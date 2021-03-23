@@ -56,14 +56,13 @@ const MainContent = (fromSiblings) => {
           for (var i = 0; i < data.length; i++) {
             var companyLink = data[i].link.substring(8, data[i].link.length);
             var imgLink = "";
-            for(let j=0; j<companyLink.length; j++){
-              if(companyLink[j] == '/')
-                break;
-              imgLink += (companyLink[j]);
+            for (let j = 0; j < companyLink.length; j++) {
+              if (companyLink[j] === "/") break;
+              imgLink += companyLink[j];
             }
-            if(imgLink == "tech.ebayinc.comhttps:")
+            if (imgLink === "tech.ebayinc.comhttps:")
               imgLink = "tech.ebayinc.com";
-            imgLink = "//logo.clearbit.com/" + imgLink;
+            imgLink = "//logo.clearbit.com/" + imgLink + "?size=300";
             console.log(imgLink);
             var x = {
               id: data[i].id,
@@ -78,7 +77,7 @@ const MainContent = (fromSiblings) => {
               views: data[i].views,
               comments: data[i].comments,
               keywords: data[i].keywords,
-              imgLink: imgLink
+              imgLink: imgLink,
             };
             if (blog.indexOf(x) === -1) {
               if (cond === true && fromSiblings.passedCompany === x.company)
