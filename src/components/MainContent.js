@@ -98,15 +98,15 @@ const MainContent = (fromSiblings) => {
       {blog.map((e) => (
         <div className="container">
           <div className="flex_box">
-            <div className="blankContainer main-tab">
+            <div className="blankContainer ">
               <img
                 src={e.imgLink}
                 alt="Company Logo"
-                width="180"
-                height="180"
+                width="175"
+                height="175"
               />
             </div>
-            <div className="contentContainer main-tab">
+            <div className="contentContainer">
               <div className="content-heading">
                 <p>{e.title}</p>
               </div>
@@ -128,19 +128,23 @@ const MainContent = (fromSiblings) => {
                 })}
               </div>
             </div>
-            <div className="statsContainer main-tab">
+            <div className="statsContainer">
               <div>
                 <span>
                   <i class="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
                 </span>{" "}
                 {e.likes}
               </div>
+
+              <br></br>
+
               <div>
                 <span>
                   <i class="fa fa-comment-o" aria-hidden="true"></i>{" "}
                 </span>
-                {e.comments} {/* Comments */}
+                {e.comments}
               </div>
+              <br></br>
               <div>
                 <span>
                   <i class="fa fa-book" aria-hidden="true"></i>{" "}

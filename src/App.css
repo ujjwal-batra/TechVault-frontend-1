@@ -75,16 +75,33 @@ main {
 }
 
 /* tags style sheet */
+
+.tagsContainerTopics {
+  margin-top: 1em;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 2px solid #e0e0e0;
+  padding: 08px;
+}
+
+.tagsContainerCompanies {
+  width: 100%;
+  border: 2px solid #e0e0e0;
+  padding: 08px;
+
+}
+
 .tags-heading h3 {
   font-weight: 400;
   margin-top: 0px;
   font-size: 20px;
   margin-bottom: 3px;
+
 }
 
 .tags-heading h3 span {
   font-size: 21px;
-  color: rgb(179, 178, 178);
+  /* color: rgb(179, 178, 178); */
 }
 
 .tags-values {
@@ -115,12 +132,19 @@ main {
 }
 
 .search-tags-input {
-  padding: 6.3px 10px;
+  width: 75%;
+  padding: 6px;
   font-size: 12px;
 }
 
 /* Homepage blogs css */
+.container {
+  width: auto;
+}
+
 .flex_box {
+  width: auto;
+  position: relative;
   display: flex;
   padding: 1%;
   border: 1px solid black;
@@ -133,12 +157,48 @@ main {
 }
 
 .blankContainer {
-  width: 20%;
+  width: auto;
+  position: relative;
+  display: flex;
+  padding: 5px;
 }
 
 .contentContainer {
   width: 65%;
-  padding: 0px 10px;
+  position: relative;
+  /* display: flex; */
+  padding: 5px;
+}
+
+.content-heading {
+  width: auto;
+  display: flex;
+  padding: 5px;
+}
+
+.content-time {
+  width: auto;
+  display: flex;
+  padding: 5px;
+}
+
+.content-description {
+  width: auto;
+  display: flex;
+  padding: 5px;
+}
+
+.content-tags {
+  width: auto;
+  display: flex;
+  padding: 5px;
+}
+
+.statsContainer {
+  height: 20px;
+  width: 20%;
+  text-align: center;
+  padding: 10px;
 }
 
 .statsContainer {
