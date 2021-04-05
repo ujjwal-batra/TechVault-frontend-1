@@ -24,6 +24,7 @@ function App() {
     };
 
     const onSubmitSignup = () => {
+        alert("submitted")
         const details = {
             "email": email,
             "userName": username,
@@ -50,7 +51,7 @@ function App() {
                     console.log(error);
                 }
                 else
-                    alert(response)
+                    console.log(response)
 
             })
         }
@@ -70,13 +71,14 @@ function App() {
                     <div>Welcome to TechVault</div>
                 </span>
             </div>
-            <div method="POST" className="signupForm">    
+            <form onSubmit={onSubmitSignup} className="signupForm">    
                 <input
                     class=""
                     type="text"
                     name="username"
                     placeholder="Username..."
                     onChange={onChangeUsername}
+                    required
                 />
                 <input
                     class=""
@@ -84,25 +86,26 @@ function App() {
                     name="email"
                     placeholder="Email..."
                     onChange={onChangeEmail}
+                    required
                 />
                 <input
                     class=""
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="Password..."
                     onChange={onChangePassword}
+                    required
                 />
                 <input
                     class=""
-                    type="text"
+                    type="password"
                     name="confirmpass"
                     placeholder="Confirm password..."
                     onChange={onChangeConfPass}
+                    required
                 />
-                <div className="submitSignup">
-                    <input className="submitSignupInput" type="submit" onClick={onSubmitSignup}/>
-                </div>
-            </div>
+                <input className="submitSignupInput" type="submit" value="submit"/>
+            </form>
 
         </div>
     );

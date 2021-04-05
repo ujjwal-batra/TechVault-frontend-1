@@ -65,6 +65,7 @@ function App() {
                     name="username"
                     placeholder="Username..."
                     onChange={onChangeUsername}
+                    required
                 />
                 <input
                     class=""
@@ -72,6 +73,7 @@ function App() {
                     name="password"
                     placeholder="Password..."
                     onChange={onChangePassword}
+                    required
                 />
                 <div>
                     Forgot password?
