@@ -312,3 +312,39 @@ main {
 .page-selector {
   text-align: center;
 }
+
+/* signup form */
+.containerForm{
+  border: 2px solid #e0e0e0;
+  width: 25%;
+  margin: 8% auto;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+.headingSignup{
+  display: flex;
+  margin: 20px 0;
+}
+
+.headingSignupText{
+  margin: auto 40px;
+}
+
+.signupForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.signupForm input{
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 10px 0;
+  padding: 1%;
+}
+
+.submitSignupInput{
+  background: none;
+  padding: 10px;
+}
