@@ -88,7 +88,6 @@ main {
   width: 100%;
   border: 2px solid #e0e0e0;
   padding: 08px;
-
 }
 
 .tags-heading h3 {
@@ -96,7 +95,6 @@ main {
   margin-top: 0px;
   font-size: 20px;
   margin-bottom: 3px;
-
 }
 
 .tags-heading h3 span {
@@ -314,7 +312,7 @@ main {
 }
 
 /* signup form */
-.containerForm{
+.containerForm {
   border: 2px solid #e0e0e0;
   width: 25%;
   margin: 8% auto;
@@ -322,21 +320,21 @@ main {
   border-radius: 5px;
 }
 
-.headingSignup{
+.headingSignup {
   display: flex;
   margin: 20px 0;
 }
 
-.headingSignupText{
+.headingSignupText {
   margin: auto 40px;
 }
 
-.signupForm{
+.signupForm {
   display: flex;
   flex-direction: column;
 }
 
-.signupForm input{
+.signupForm input {
   height: 25px;
   border-radius: 5px;
   border: 1px solid black;
@@ -344,7 +342,7 @@ main {
   padding: 1%;
 }
 
-.submitSignupInput{
+.submitSignupInput {
   background: none;
   padding: 10px;
 }
