@@ -106,7 +106,7 @@ function App() {
           />
         </div>
         <div>
-          Already have an accout? <a href="./login">Log In</a>
+          Already have an account? <a href="./login">Log In</a>
         </div>
       </div>
     </div>
