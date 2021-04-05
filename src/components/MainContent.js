@@ -63,7 +63,7 @@ const MainContent = (fromSiblings) => {
             }
             if(imgLink == "tech.ebayinc.comhttps:")
               imgLink = "tech.ebayinc.com";
-            imgLink = "//logo.clearbit.com/" + imgLink;
+            imgLink = "//logo.clearbit.com/" + imgLink + "?size=800";
             console.log(imgLink);
             var x = {
               id: data[i].id,
