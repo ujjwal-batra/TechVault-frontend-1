@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Homepage from './homepage';
 import Signup from './signup';
+import Login from './login';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       )}/>
     <Route path="/signup" exact render={props => (
         <Signup />
+      )}/>
+    <Route path="/login" exact render={props => (
+        <Login />
       )}/>
 
       

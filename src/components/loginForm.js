@@ -2,33 +2,21 @@ import React, { useState, useEffect } from "react";
 
 function App() {
     const [username, setUsername] = React.useState("");
-    const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
-    const [confpass, setconfpass] = React.useState("");
 
     const onChangeUsername = (e) => {
         setUsername(e.target.value);
-        console.log(e.target.value);
-    };
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value);
         console.log(e.target.value);
     };
     const onChangePassword = (e) => {
         setPassword(e.target.value);
         console.log(e.target.value);
     };
-    const onChangeConfPass = (e) => {
-        setconfpass(e.target.value);
-        console.log(e.target.value);
-    };
 
     const onSubmitSignup = () => {
         const details = {
-            "email": email,
             "userName": username,
             "password": password,
-            "passwordRepeat": confpass
         }
         const requestOptions = {
             method: 'POST',
@@ -38,7 +26,7 @@ function App() {
         try{
             
             
-            fetch('http://localhost:8080/user/register', requestOptions)
+            fetch('', requestOptions)
             .then(async response => {
                 
                 const data = await response.json();
@@ -50,12 +38,12 @@ function App() {
                     console.log(error);
                 }
                 else
-                    alert(response)
+                    alert("Logged in")
 
             })
         }
         catch (err) {
-            alert(err); // Failed to fetch
+            console.log(err); // Failed to fetch
           }
     };
 
@@ -66,7 +54,7 @@ function App() {
                     <img src="https://img.icons8.com/ios/452/edit-user-male.png" width="100px" height="100px"/>
                 </span>
                 <span className="headingSignupText">
-                    <div>Sign up</div>
+                    <div>Login</div>
                     <div>Welcome to TechVault</div>
                 </span>
             </div>
@@ -80,27 +68,19 @@ function App() {
                 />
                 <input
                     class=""
-                    type="email"
-                    name="email"
-                    placeholder="Email..."
-                    onChange={onChangeEmail}
-                />
-                <input
-                    class=""
                     type="text"
                     name="password"
                     placeholder="Password..."
                     onChange={onChangePassword}
                 />
-                <input
-                    class=""
-                    type="text"
-                    name="confirmpass"
-                    placeholder="Confirm password..."
-                    onChange={onChangeConfPass}
-                />
+                <div>
+                    Forgot password?
+                </div>
                 <div className="submitSignup">
-                    <input className="submitSignupInput" type="submit" onClick={onSubmitSignup}/>
+                    <input className="submitSignupInput" type="submit" onClick={onSubmitSignup}  />
+                </div>
+                <div>
+                    Don't have an accout? <a href="#">Sign up</a>
                 </div>
             </div>
 
