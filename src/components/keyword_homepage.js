@@ -66,7 +66,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
 
   return (
     <div>
-      <div className="tagsContainer">
+      <div className="tagsContainerTopics">
         <div className="tags-heading">
           <span class="text-300 text-lg tags-title">
             <i class="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
@@ -98,7 +98,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
           ))}
         </div>
 
-        <hr />
+        {/* <hr /> */}
       </div>
     </div>
   );

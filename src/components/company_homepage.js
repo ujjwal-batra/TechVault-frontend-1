@@ -67,7 +67,7 @@ const RightTags = ({ setPassedCompany }) => {
 
   return (
     <div>
-      <div className="tagsContainer">
+      <div className="tagsContainerCompanies">
         <div className="tags-heading">
           <span class="text-300 text-lg tags-title">
             <i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Companies
@@ -98,7 +98,7 @@ const RightTags = ({ setPassedCompany }) => {
           ))}
         </div>
 
-        <hr />
+        {/* <hr /> */}
       </div>
     </div>
   );
