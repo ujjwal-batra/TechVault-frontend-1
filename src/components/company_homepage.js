@@ -23,7 +23,7 @@ const RightTags = ({ setPassedCompany }) => {
 
   const onchange = (e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const filteredTopics = companies.filter((x) => {
