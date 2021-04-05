@@ -25,7 +25,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
 
   const onchange = (e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const filteredTopics = topics.filter((x) => {
@@ -34,7 +34,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
 
   const onClickTopic = (e) => {
     setSelectedTopics(e);
-    console.log(e);
+    // console.log(e);
     setPassedTopic(e);
   };
 

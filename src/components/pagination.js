@@ -9,7 +9,7 @@ const MainContent = (fromParent) => {
 
   const onClickPage = (e) => {
     fromParent.setPageNo(e.e - 1);
-    console.log(e);
+    // console.log(e);
   };
 
   return (

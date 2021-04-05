@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 const header = ({ setSelectedNav }) => {
   const onClickNav = (e) => {
-    console.log(e);
+    // console.log(e);
     setSelectedNav(e);
   };
 
