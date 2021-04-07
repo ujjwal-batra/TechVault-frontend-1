@@ -8,8 +8,8 @@ const header = () => {
           <span><Link className="techvault" to="/">TechVault</Link></span>
         </div>
         <div className="headerLinks">
-          <a href="#">Contact Us</a>
-          <div> 
+          <span><a href="#">Contact Us</a></span>
+          <span> 
             <span>
               <Link to="/login">
                   Log In
@@ -20,7 +20,7 @@ const header = () => {
                 /Register
               </Link> 
             </span>
-          </div>
+          </span>
         </div>
       </header>
     </div>
