@@ -350,3 +350,77 @@ main {
   background: none;
   padding: 10px;
 }
+
+/* commentPage */
+.commentPageContainer{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 5px;
+}
+
+.commentPageImage, .commentPageDetails{
+  flex: 20%;
+}
+.commentPageMiddle{
+  flex: 60%;
+}
+
+.commentPageDetails{
+  display: flex;
+}
+
+
+.commentPageTitle{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.CommentPageGeneral{
+  color: #575656;
+}
+
+.CommentPageAbstract, .CommentPageLink{
+  padding: 2%;
+}
+
+.CommentPageLink a{
+  /* color: black; */
+  text-decoration: none;
+}
+
+.commentPageImage{
+  text-align: center;
+}
+
+.CommentPageUsername{
+  font-size: 18px;
+  font-weight: 400;
+  color: blue;
+}
+
+.CommentPageComment{
+  font-size: 14px;
+  padding: 0px 30px;
+}
+
+.commentContainer{
+  padding: 10px 5px;
+  border: 2px solid #e0e0e0;
+  margin: 5px 0px;
+}
+
+@media (max-width: 800px) {
+  .commentPageImage, .commentPageDetails{
+    flex: 100%;
+  }
+  .commentPageMiddle{
+    flex: 100%;
+  }
+  .commentPageDetails{
+    flex-direction: row;
+    margin: 0 auto;
+  }
+  .commentPageDetails div{
+    margin: 0px 10px;
+  }
+}
