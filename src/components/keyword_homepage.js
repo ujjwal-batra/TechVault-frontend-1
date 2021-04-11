@@ -11,12 +11,17 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
   const [selectedTopics, setSelectedTopics] = React.useState(null);
 
   const SelectedTagDisplay = () => {
-    if (selectedTopics == null || selectedTopics == "") return null;
+    if (selectedTopics === null || selectedTopics === "") return null;
     else
       return (
-        <div style={{ background: `#F4E8C8` }}>
+        <div
+          style={{ background: `#3a4251`, color: `#eee`, cursor: `pointer` }}
+        >
           {selectedTopics}{" "}
-          <span onClick={() => onClickDeselct({ selectedTopics })}>
+          <span
+            style={{ padding: `5px` }}
+            onClick={() => onClickDeselct({ selectedTopics })}
+          >
             &#10006;
           </span>
         </div>
@@ -34,7 +39,6 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
 
   const onClickTopic = (e) => {
     setSelectedTopics(e);
-    // console.log(e);
     setPassedTopic(e);
   };
 
@@ -81,7 +85,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
               class="search-tags-input"
               type="text"
               name="topicSearch"
-              placeholder="Search for Tags..."
+              placeholder="Search for Tags"
               onChange={onchange}
             />
           </div>
@@ -90,15 +94,13 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
         <div className="tags-values">
           {filteredTopics.slice(0, 5).map((e) => (
             <div
-              style={{ background: `#F4E8C8` }}
+              style={{ background: `#eee` }}
               onClick={() => onClickTopic(e.keyword)}
             >
-              {e.keyword} | <span>{e.frequency}</span>
+              {e.keyword} <span className="tags-counts">{e.frequency}</span>
             </div>
           ))}
         </div>
-
-        {/* <hr /> */}
       </div>
     </div>
   );

@@ -9,12 +9,17 @@ const RightTags = ({ setPassedCompany }) => {
   const [selectedCompanies, setSelectedCompanies] = React.useState();
 
   const SelectedTagDisplay = () => {
-    if (selectedCompanies == null || selectedCompanies == "") return null;
+    if (selectedCompanies == null || selectedCompanies === "") return null;
     else
       return (
-        <div style={{ background: `#F4E8C8` }}>
+        <div
+          style={{ background: `#3a4251`, color: `#eee`, cursor: `pointer` }}
+        >
           {selectedCompanies}{" "}
-          <span onClick={() => onClickDeselct(selectedCompanies)}>
+          <span
+            style={{ padding: `5px` }}
+            onClick={() => onClickDeselct(selectedCompanies)}
+          >
             &#10006;
           </span>
         </div>
@@ -69,7 +74,7 @@ const RightTags = ({ setPassedCompany }) => {
     <div>
       <div className="tagsContainerCompanies">
         <div className="tags-heading">
-          <span class="text-300 text-lg tags-title">
+          <span class=" tags-title">
             <i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Companies
           </span>
 
@@ -81,7 +86,7 @@ const RightTags = ({ setPassedCompany }) => {
               class="search-tags-input"
               type="text"
               name="topicSearch"
-              placeholder="Search for Tags..."
+              placeholder="Search for Tags"
               onChange={onchange}
             />
           </div>
@@ -89,11 +94,11 @@ const RightTags = ({ setPassedCompany }) => {
         <div className="tags-values">
           {filteredTopics.slice(0, 10).map((e) => (
             <div
-              style={{ background: `#F4E8C8` }}
+              style={{ background: `#eee` }}
               onClick={() => onClickTopic(e.company)}
             >
               {e.company}
-              <span> | {e.count}</span>
+              <span className="tags-counts"> {e.count}</span>
             </div>
           ))}
         </div>

@@ -79,7 +79,7 @@ const MainContent = (fromSiblings) => {
               comments: data[i].comments,
               keywords: data[i].keywords,
               imgLink: imgLink,
-              commentLink: "comment/"+data[i].id
+              commentLink: "comment/" + data[i].id,
             };
             if (blog.indexOf(x) === -1) {
               if (cond === true && fromSiblings.passedCompany === x.company)
@@ -98,7 +98,6 @@ const MainContent = (fromSiblings) => {
   return (
     <div>
       {blog.map((e) => (
-        
         <div className="container">
           <div className="flex_box">
             <div className="blankContainer ">
@@ -109,17 +108,19 @@ const MainContent = (fromSiblings) => {
                 height="175"
               />
             </div>
-            
+
             <div className="contentContainer">
               <div className="content-heading">
-              <Link to={{
-                pathname: '/comment',
-                aboutProps:{
-                  data: e
-                }
-              }}>
-                <p>{e.title}</p>
-              </Link>
+                <Link
+                  to={{
+                    pathname: "/comment",
+                    aboutProps: {
+                      data: e,
+                    },
+                  }}
+                >
+                  <p>{e.title}</p>
+                </Link>
               </div>
               <div className="content-time">
                 <p>

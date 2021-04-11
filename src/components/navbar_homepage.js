@@ -16,12 +16,7 @@ const header = ({ setSelectedNav }) => {
           <button onClick={() => onClickNav("viewed")}>Top Viewed</button>
         </div>
         <div className="navSearch">
-          <input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="Search..."
-          />
+          <input type="text" name="search" id="search" placeholder="Search" />
         </div>
       </nav>
     </div>
