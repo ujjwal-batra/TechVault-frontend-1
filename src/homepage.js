@@ -18,7 +18,7 @@ function App() {
       <Header />
       <Navbar setSelectedNav={setSelectedNav} />
 
-      <main>
+      <main className="homepageContainer">
         <div className="left-container">
           <div className="mainContent left-tab">
             <div>

@@ -57,14 +57,14 @@ nav {
 main {
   height: 80vh;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .left-container {
-  width: 80%;
+  flex: 80%;
 }
 
 .left-container .left-tab {
-  height: 25vh;
   /* border: 1px solid black; */
   margin-bottom: 15px;
 }
@@ -74,9 +74,15 @@ main {
 }
 
 .right-container {
-  margin: 0px auto;
-  width: 18%;
+  flex: 18%;
 }
+
+@media (max-width: 800px) {
+  .left-container, .right-container{
+    flex: 100%;
+  }
+}
+
 
 /* tags style sheet */
 
@@ -145,13 +151,12 @@ main {
 }
 
 .flex_box {
-  width: auto;
-  position: relative;
   display: flex;
   padding: 1%;
   border: 1px solid black;
   margin: 1em;
   border-radius: 10px;
+  flex-wrap: wrap;
 }
 
 .main-tab {
@@ -161,8 +166,8 @@ main {
 .blankContainer {
   width: auto;
   position: relative;
-  display: flex;
   padding: 5px;
+  text-align: center;
 }
 
 .contentContainer {
@@ -210,6 +215,7 @@ main {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 10px 0px;
+  flex-wrap: wrap;
 }
 
 .statsContainer div {
@@ -232,6 +238,16 @@ main {
 
 .statsContainer div:nth-of-type(3) {
   background-color: #8de769;
+}
+
+@media (max-width: 800px) {
+  .statsContainer, .contentContainer, .blankContainer{
+    flex: 100%;
+  }
+  .statsContainer div{
+    flex-direction: row;
+    
+  }
 }
 
 .main-tab {

@@ -109,6 +109,7 @@ const MainContent = (fromSiblings) => {
                 height="175"
               />
             </div>
+            
             <div className="contentContainer">
               <div className="content-heading">
               <Link to={{
@@ -138,6 +139,7 @@ const MainContent = (fromSiblings) => {
                 })}
               </div>
             </div>
+
             <div className="statsContainer">
               <div>
                 <span>
