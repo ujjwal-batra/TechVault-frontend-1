@@ -1,3 +1,11 @@
+- I have temporarily deployed the project to check out the things of frontend: https://tech-vault-frontend.vercel.app/
+
+- but you should docker image running on localhost:8080
+
+* Command you have to run : `docker run -p 8080:8080 techvaulthub/techvault:Mar28-1`
+
+## Local SetUp
+
 - Clone The Repo.
 - run `yarn install`
 - run npm start

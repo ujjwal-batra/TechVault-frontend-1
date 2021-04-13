@@ -24,46 +24,48 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-      <Navbar setSelectedNav={setSelectedNav} />
+      <div className="homepageWhole">
+        <Header />
+        <Navbar setSelectedNav={setSelectedNav} />
 
-      <main className="homepageContainer">
-        <div className="left-container">
-          <div className="mainContent left-tab">
-            <div>
-              <MainContent
-                setPassedTopic={setPassedTopic}
-                pageNo={pageNo}
-                selevtedNav={selevtedNav}
+        <main className="homepageContainer">
+          <div className="left-container">
+            <div className="mainContent left-tab">
+              <div>
+                <MainContent
+                  setPassedTopic={setPassedTopic}
+                  pageNo={pageNo}
+                  selevtedNav={selevtedNav}
+                  passedTopics={passedTopics}
+                  passedCompany={passedCompany}
+                />
+              </div>
+              <div className="page-selector">
+                <Pagination setPageNo={setPageNo} />
+              </div>
+            </div>
+          </div>
+
+          <div className="right-container">
+            <div className="filterButton" onClick={() => onClickMenu()}>
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+            <div className={hiddenSection}>
+              <div className="navSearch">
+                <input type="text" name="search" id="search" placeholder="Search" />
+              </div>
+              <Topics
                 passedTopics={passedTopics}
-                passedCompany={passedCompany}
+                setPassedTopic={setPassedTopic}
+                setPageNo={setPageNo}
               />
-            </div>
-            <div className="page-selector">
-              <Pagination setPageNo={setPageNo} />
+              <Company setPassedCompany={setPassedCompany} />
             </div>
           </div>
-        </div>
-
-        <div className="right-container">
-          <div className="filterButton" onClick={() => onClickMenu()}>
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-          </div>
-          <div className={hiddenSection}>
-            <div className="navSearch">
-              <input type="text" name="search" id="search" placeholder="Search" />
-            </div>
-            <Topics
-              passedTopics={passedTopics}
-              setPassedTopic={setPassedTopic}
-              setPageNo={setPageNo}
-            />
-            <Company setPassedCompany={setPassedCompany} />
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }

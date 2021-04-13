@@ -12,15 +12,13 @@ const header = () => {
           </span>
         </div>
         <div className="headerLinks">
-          <span>
-            <a href="#">Contact Us</a>
-          </span>
+          
           <span className="loginButtonHeader">
             <span>
-              <Link to="/login">Log In</Link>
+              <Link className="loginButton" to="/login">LogIn</Link>
             </span>
             <span>
-              <Link to="/signup">/Register</Link>
+              <Link className="loginButton" to="/signup">/Register</Link>
             </span>
           </span>
         </div>
