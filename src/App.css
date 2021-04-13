@@ -1,7 +1,5 @@
 .app {
-  margin: 0;
-  /* color: #000000f3; */
-  width: 95%;
+  width: 100%;
   margin: 0px auto;
   height: 95%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -13,29 +11,54 @@
   color: #212529;
 }
 
+.homepageContainer{
+  padding: 0px 4% 0% 2%;
+}
+
 .headerContainer {
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  padding: 10px 3%;
   height: 5vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  background-color: #6C63FF;
 }
 
-.heading span {
-  font-size: 24px;
-  color: #89d96f;
+.headerLinks{
+  margin-left: auto;
+}
+
+.heading{
+  margin-right: auto;
 }
 
 .techvault {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
   font-size: 24px;
-  color: #89d96f;
+  line-height: 23px;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
-.headerLinks a {
-  padding-right: 10px;
+.contactButton {
+  padding-right: 0px;
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+.loginButtonHeader{
+  padding: 4%;
+  background-color: white;
+  color: #6C63FF;  
+  border-radius: 3px;
+}
+
+.loginButtonHeader a{
+  text-decoration: none;
+  color: #6C63FF;
+  font-weight: 600;
 }
 
 nav {
@@ -58,23 +81,17 @@ nav {
 }
 
 .navSearch input[type="text"] {
-  width: 450px;
+  width: 100%;
   padding: 6px;
   font-size: 12px;
   background-color: #eee;
   position: relative;
   white-space: wrap;
-  /* padding: 5px;
-  font-size: 16px;
-  font-style: italic;
-  width: 450px;
-  box-shadow: -1px 0px 6px -2px rgba(0, 0, 0, 0.75); */
 }
 
 main {
-  height: 80vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .left-container {
@@ -96,13 +113,47 @@ main {
 
 .right-container {
   flex: 18%;
+  margin-top: -3%;
 }
 
-@media (max-width: 800px) {
+.filterButton{
+  right: 0;
+  display: none;
+}
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: rgb(80, 79, 79);
+  margin: 6px 0;
+  transition: 0.4s;
+}
 
+@media screen and (max-width: 800px) {
   .left-container,
   .right-container {
     flex: 100%;
+  }
+  main{
+    flex-direction: column-reverse !important;
+  }
+  .filterButton{
+    display: block;
+    margin-left: 90%;
+    margin-top: -10%;
+  }
+  ..right-container{
+    margin-top: 4%;
+  }
+  .hiddenDropdownFilter{
+    display: none;
+  }
+  .showDropdownFilter{
+    display: block;
+    margin-top: 5%;
+  }
+  .navSearch{
+    width: 95%;
+    text-align: center;
   }
 }
 
@@ -187,7 +238,7 @@ main {
 
 /* Homepage blogs css */
 .container {
-  width: 90%;
+  width: 97%;
 }
 
 .flex_box {
@@ -195,9 +246,7 @@ main {
   margin-bottom: 50px;
   margin-top: 20px;
   padding: 25px 05px 0;
-  min-height: 220px;
-  /* display: inline-block; */
-  text-align: center;
+  min-height: 200px;
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
@@ -212,29 +261,22 @@ main {
 
 .blankContainer {
   height: auto;
-  width: 230px;
+  flex: 1;
+  margin: auto 0;
   background-size: 230px auto;
 }
 
 .contentContainer {
-  width: 65%;
-  position: relative;
-  /* display: flex; */
-  padding: 5px;
+  /* width: 65%; */
+  flex: 4;
+  text-align: left;
+  padding: 0px 20px;
 }
 
 .content-heading {
-  width: auto;
   display: flex;
   padding: 5px;
 }
-
-/* .content-time {
-  width: auto;
-  display: flex;
-  padding: 5px;
-  padding-top: 2px
-} */
 
 .content-time p {
   font-size: 10px;
@@ -249,21 +291,12 @@ main {
   padding: 5px;
 }
 
-/* .statsContainer {
-  height: 20px;
-  width: 20%;
-  text-align: center;
-  padding: 10px;
-} */
-
 .statsContainer {
-  width: 15%;
+  flex: 1;
+  /* width: 15%; */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
   padding: 10px 0px;
-  flex-wrap: wrap;
 }
 
 .statsContainer div {
@@ -278,6 +311,10 @@ main {
 
 .statsContainer div span {
   font-size: medium;
+}
+
+.statsContainer div span i{
+  color: #6C63FF;
 }
 
 /* .statsContainer div:nth-of-type(2) {
@@ -297,10 +334,10 @@ main {
   }
 
   .statsContainer {
-    height: 20px;
-    width: 20px;
+    flex-direction: row;
+    /* width: 20px; */
     text-align: center;
-    padding: 10px;
+    margin-left: 20%;
   }
 }
 
@@ -351,12 +388,20 @@ main {
 }
 
 .navLinks button {
-  background: none;
-  border: 1px black solid;
+  background-color: white;
   padding: 2px 5px;
   margin: 0px 5px;
   font-size: 15px;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: #6C63FF solid 3px;
+}
+
+
+.fa-check{
+  background-color: #6C63FF !important;
+  color: white;
+  font-weight: 100;
+
 }
 
 .navLinks select {

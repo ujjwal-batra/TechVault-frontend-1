@@ -165,6 +165,7 @@ const MainContent = (fromSiblings) => {
                 Blog
               </div>
             </div>
+            
           </div>
         </div>
       ))}
