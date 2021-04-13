@@ -138,14 +138,22 @@ main {
   }
   .filterButton{
     display: block;
-    
-  margin-right: auto;
+    margin-left: 90%;
+    margin-top: -10%;
+  }
+  ..right-container{
+    margin-top: 4%;
   }
   .hiddenDropdownFilter{
     display: none;
   }
   .showDropdownFilter{
     display: block;
+    margin-top: 5%;
+  }
+  .navSearch{
+    width: 95%;
+    text-align: center;
   }
 }
 
