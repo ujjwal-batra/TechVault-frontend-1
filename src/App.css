@@ -1,5 +1,5 @@
 .app {
-  width: 95%;
+  width: 100%;
   margin: 0px auto;
   height: 95vh;
 }
@@ -10,23 +10,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.heading span {
-  font-size: 24px;
-  color: #89d96f;
+  background-color: #6C63FF;
+  padding: 10px;
 }
 
 .techvault {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
   font-size: 24px;
-  color: #89d96f;
+  line-height: 23px;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
 .headerLinks a {
   padding-right: 10px;
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+.loginButtonHeader{
+
 }
 
 nav {
@@ -49,7 +54,7 @@ nav {
 }
 
 .navSearch input[type="text"] {
-  width: 450px;
+  width: 100%;
   padding: 6px;
   font-size: 12px;
   background-color: #eee;
@@ -63,9 +68,9 @@ nav {
 }
 
 main {
-  height: 80vh;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
 }
 
 .left-container {
@@ -85,10 +90,34 @@ main {
   flex: 18%;
 }
 
-@media (max-width: 800px) {
+.filterButton{
+  right: 0;
+  display: none;
+}
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: rgb(80, 79, 79);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 800px) {
   .left-container,
   .right-container {
     flex: 100%;
+  }
+  main{
+    flex-direction: column-reverse !important;
+  }
+  .filterButton{
+    display: block;
+  }
+  .hiddenDropdownFilter{
+    display: none;
+  }
+  .showDropdownFilter{
+    display: block;
   }
 }
 

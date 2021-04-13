@@ -12,6 +12,15 @@ function App() {
   const [passedTopics, setPassedTopic] = useState("");
   const [passedCompany, setPassedCompany] = useState("");
   const [pageNo, setPageNo] = React.useState(0);
+  const [hiddenSection, setHiddenSection] = React.useState("hiddenDropdownFilter");
+  
+  const onClickMenu = () => {
+    if(hiddenSection == "hiddenDropdownFilter")
+      setHiddenSection("showDropdownFilter")
+    else
+      setHiddenSection("hiddenDropdownFilter")
+    console.log(hiddenSection)
+  };
 
   return (
     <div className="app">
@@ -37,12 +46,22 @@ function App() {
         </div>
 
         <div className="right-container">
-          <Topics
-            passedTopics={passedTopics}
-            setPassedTopic={setPassedTopic}
-            setPageNo={setPageNo}
-          />
-          <Company setPassedCompany={setPassedCompany} />
+          <div className="filterButton" onClick={() => onClickMenu()}>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <div className={hiddenSection}>
+            <div className="navSearch">
+              <input type="text" name="search" id="search" placeholder="Search" />
+            </div>
+            <Topics
+              passedTopics={passedTopics}
+              setPassedTopic={setPassedTopic}
+              setPageNo={setPageNo}
+            />
+            <Company setPassedCompany={setPassedCompany} />
+          </div>
         </div>
       </main>
     </div>
