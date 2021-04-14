@@ -9,6 +9,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
   const [topics, setTopics] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [selectedTopics, setSelectedTopics] = React.useState(null);
+  const [topicVisible, setTopicVisible] = React.useState(5);
 
   const SelectedTagDisplay = () => {
     if (selectedTopics === null || selectedTopics === "") return null;
@@ -27,6 +28,10 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
         </div>
       );
   };
+
+  const onClickShowMore = () => {
+    setTopicVisible(topicVisible + 10)
+  }
 
   const onchange = (e) => {
     setSearch(e.target.value);
@@ -92,7 +97,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
         </div>
 
         <div className="tags-values">
-          {filteredTopics.slice(0, 5).map((e) => (
+          {filteredTopics.slice(0, topicVisible).map((e) => (
             <div
               style={{ background: `#eee` }}
               onClick={() => onClickTopic(e.keyword)}
@@ -100,6 +105,9 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
               {e.keyword} <span className="tags-counts">{e.frequency}</span>
             </div>
           ))}
+        </div>
+        <div className="showMoreButton" onClick={() => onClickShowMore()}>
+            <span>Show More &nbsp; <i className="fa fa-caret-down"></i></span>
         </div>
       </div>
     </div>

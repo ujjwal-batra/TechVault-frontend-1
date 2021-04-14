@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 const Header = ({ setSelectedNav }) => {
-  const [latest, setLatest] = React.useState();
+  const [latest, setLatest] = React.useState("fa fa-check");
   const [liked, setLiked] = React.useState();
   const [viewed, setViewed] = React.useState();
 
