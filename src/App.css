@@ -151,7 +151,7 @@ main {
   .filterButton {
     display: block;
     margin-left: 90%;
-    margin-top: -10%;
+    margin-top: -16%;
   }
 
   .right-container {
@@ -198,17 +198,7 @@ main {
 
 .tags-heading h3 span {
   font-size: 21px;
-  /* color: rgb(179, 178, 178); */
 }
-
-/* .tags-values {
-  margin: 5px;
-  border-radius: 12px;
-  padding: 2px 12px;
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-} */
 
 .tags-values div {
   cursor: pointer;
@@ -254,6 +244,20 @@ main {
   font-size: 12px;
 }
 
+.showMoreButton{
+  text-align: center;
+  font-size: small;
+  margin: 10px 0px;
+}
+.showMoreButton span{
+  /* background-color: #3a4251; */
+  border: #3a4251 solid 2px;
+  padding: 1% 2%;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 /* Homepage blogs css */
 a:link,
 a {
@@ -269,7 +273,7 @@ a {
   width: 100%;
   margin-bottom: 50px;
   margin-top: 20px;
-  padding: 25px 05px 0;
+  padding: 10px 1%;
   min-height: 200px;
   display: flex;
   flex-wrap: wrap;
@@ -317,13 +321,15 @@ a {
   padding: 5px;
 }
 
+.content-time{
+  margin-top: -20px;
+  margin-left: 1%;
+}
 
 .content-time p {
-
   font-size: 10px;
-  margin: 2px 0px;
+  /* margin: 2px 0px; */
   opacity: 0.6;
-
 }
 
 .content-description {
@@ -337,11 +343,11 @@ a {
   /* width: 15%; */
   display: flex;
   flex-direction: column;
-  padding: 10px 0px;
+  padding: 25px 0px;
 }
 
 .statsContainer div {
-  font-size: small;
+  font-size: 15px;
   padding: 3px 8px;
   margin-right: 15px 0px;
 }
@@ -351,11 +357,13 @@ a {
 } */
 
 .statsContainer div span {
-  font-size: medium;
+  font-size: large;
 }
 
 .statsContainer div span i {
   color: #6C63FF;
+  font-size: large;
+  padding: 1px 4px;
 }
 
 /* .statsContainer div:nth-of-type(2) {
@@ -368,15 +376,16 @@ a {
 
 @media (max-width: 800px) {
 
-  .statsContainer,
-  .contentContainer,
-  .blankContainer {
+  .contentContainer {
     flex: 100%;
+  }
+  .statsContainer,
+  .blankContainer{
+    flex: 50%;
   }
 
   .statsContainer {
     flex-direction: row;
-    /* width: 20px; */
     text-align: center;
     margin-left: 20%;
   }

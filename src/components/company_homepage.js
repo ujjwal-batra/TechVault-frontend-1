@@ -7,6 +7,11 @@ const RightTags = ({ setPassedCompany }) => {
   const [companies, setCompanies] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [selectedCompanies, setSelectedCompanies] = React.useState();
+  const [companyVisible, setCompanyVisible] = React.useState(10);
+
+  const onClickShowMore = () => {
+    setCompanyVisible(companyVisible + 10)
+  }
 
   const SelectedTagDisplay = () => {
     if (selectedCompanies == null || selectedCompanies === "") return null;
@@ -92,7 +97,7 @@ const RightTags = ({ setPassedCompany }) => {
           </div>
         </div>
         <div className="tags-values">
-          {filteredTopics.slice(0, 10).map((e) => (
+          {filteredTopics.slice(0, companyVisible).map((e) => (
             <div
               style={{ background: `#eee` }}
               onClick={() => onClickTopic(e.company)}
@@ -103,7 +108,10 @@ const RightTags = ({ setPassedCompany }) => {
           ))}
         </div>
 
-        {/* <hr /> */}
+        <div className="showMoreButton" onClick={() => onClickShowMore()}>
+            <span>Show More &nbsp; <i className="fa fa-caret-down"></i></span>
+        </div>
+        
       </div>
     </div>
   );
