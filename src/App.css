@@ -11,6 +11,12 @@
   color: #212529;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .app {
+    scroll-behavior: smooth;
+  }
+}
+
 .homepageContainer {
   padding: 0px 4% 0% 2%;
 }
@@ -205,6 +211,7 @@ main {
 } */
 
 .tags-values div {
+  cursor: pointer;
   margin: 5px;
   border-radius: 12px;
   padding: 2px 12px;
@@ -218,6 +225,7 @@ main {
 }
 
 .tags-counts {
+  cursor: pointer;
   margin-left: 8px;
   border-radius: 25px;
   background: #3a4251;
@@ -283,12 +291,24 @@ main {
   padding: 0px 20px;
 }
 
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .content-heading {
+    padding-left: 60px;
+  }
+}
+
 .content-heading {
+  color: #212121;
+  color: #333 !important;
+  text-decoration: none;
   display: flex;
+  cursor: pointer;
   padding: 5px;
 }
 
+
 .content-time p {
+
   font-size: 10px;
   margin: 2px 0px;
   opacity: 0.6;
@@ -421,12 +441,29 @@ main {
   font-size: 15px;
 }
 
+.Pages-selector-section {
+  margin: 0;
+  padding: 0;
+  color: #000000a6;
+}
+
+.pagination_button_active {
+  background-color: #37474f;
+}
+
 .pagination_button {
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 8px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  text-align: center;
+  vertical-align: middle;
   padding: 5px;
   margin: 5px;
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .Pages-selector-section {
