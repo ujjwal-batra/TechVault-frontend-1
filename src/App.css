@@ -255,6 +255,12 @@ main {
 }
 
 /* Homepage blogs css */
+a:link,
+a {
+  /* color: #333 !important; */
+  text-decoration: none;
+}
+
 .container {
   width: 97%;
 }
@@ -298,9 +304,14 @@ main {
 }
 
 .content-heading {
-  color: #212121;
-  color: #333 !important;
-  text-decoration: none;
+  color: #333;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: left;
+  font-family: "JetBrains Mono";
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 0;
   display: flex;
   cursor: pointer;
   padding: 5px;
@@ -377,10 +388,10 @@ main {
   justify-content: space-evenly;
 }
 
-.content-heading p {
+/* .content-heading p {
   margin: 5px 0px 2px;
   font-size: 22px;
-}
+} */
 
 
 
@@ -589,4 +600,37 @@ main {
   .commentPageDetails div {
     margin: 0px 10px;
   }
+}
+
+/* footer */
+
+.footer {
+  display: block;
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+}
+
+.footer a {
+  color: #999;
+}
+
+.footer-contact {
+  margin-bottom: 5px;
+}
+
+.footer-contact-tem {
+  display: inline-block;
+}
+
+.icon-wrapper {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  contain: strict;
+  fill: currentcolor;
+  box-sizing: content-box !important;
 }
