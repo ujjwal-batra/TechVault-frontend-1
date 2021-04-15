@@ -5,7 +5,8 @@ import Navbar from "./components/navbar_homepage";
 import Topics from "./components/keyword_homepage";
 import Company from "./components/company_homepage";
 import Pagination from "./components/pagination";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function App() {
   const [selevtedNav, setSelectedNav] = useState("latest");
