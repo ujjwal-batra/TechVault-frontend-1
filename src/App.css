@@ -244,12 +244,13 @@ main {
   font-size: 12px;
 }
 
-.showMoreButton{
+.showMoreButton {
   text-align: center;
   font-size: small;
   margin: 10px 0px;
 }
-.showMoreButton span{
+
+.showMoreButton span {
   /* background-color: #3a4251; */
   border: #3a4251 solid 2px;
   padding: 1% 2%;
@@ -321,7 +322,7 @@ a {
   padding: 5px;
 }
 
-.content-time{
+.content-time {
   margin-top: -20px;
   margin-left: 1%;
 }
@@ -379,8 +380,9 @@ a {
   .contentContainer {
     flex: 100%;
   }
+
   .statsContainer,
-  .blankContainer{
+  .blankContainer {
     flex: 50%;
   }
 
