@@ -267,11 +267,22 @@ main {
 
 .showMoreButton {
   text-align: center;
-  font-size: small;
   margin: 10px 0px;
+  white-space: nowrap;
+  border-color: #adadad;
+}
+
+.showMoreButton span:hover {
+  color: #333;
+  background-color: #e0e0e0;
 }
 
 .showMoreButton span {
+  border-color: #d3cdcd;
+  text-align: center;
+  border: 0.1em solid #3a4251;
+  font-size: 0.7em;
+  font-weight: 450;
   text-align: center;
   border: 1px solid #3a4251;
   font-size: 14px;

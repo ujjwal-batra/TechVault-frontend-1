@@ -10,8 +10,8 @@ const RightTags = ({ setPassedCompany }) => {
   const [companyVisible, setCompanyVisible] = React.useState(10);
 
   const onClickShowMore = () => {
-    setCompanyVisible(companyVisible + 10)
-  }
+    setCompanyVisible(companyVisible + 10);
+  };
 
   const SelectedTagDisplay = () => {
     if (selectedCompanies == null || selectedCompanies === "") return null;
@@ -108,10 +108,17 @@ const RightTags = ({ setPassedCompany }) => {
           ))}
         </div>
 
+        {/* <div className="showMoreButton" onClick={() => onClickShowMore()}>
+          <span>Show More</span>
+          &nbsp;
+          <i className="fa fa-chevron-circle-down"></i>
+        </div> */}
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
-            <span>Show More &nbsp; <i className="fa fa-caret-down"></i></span>
+          <span class="text">
+            Show More &nbsp;
+            <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
+          </span>
         </div>
-        
       </div>
     </div>
   );

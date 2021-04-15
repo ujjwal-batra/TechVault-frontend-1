@@ -30,8 +30,8 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
   };
 
   const onClickShowMore = () => {
-    setTopicVisible(topicVisible + 10)
-  }
+    setTopicVisible(topicVisible + 10);
+  };
 
   const onchange = (e) => {
     setSearch(e.target.value);
@@ -107,7 +107,10 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
           ))}
         </div>
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
-            <span>Show More &nbsp; <i className="fa fa-caret-down"></i></span>
+          <span class="text">
+            Show More &nbsp;
+            <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
+          </span>
         </div>
       </div>
     </div>
