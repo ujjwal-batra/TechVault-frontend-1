@@ -272,8 +272,14 @@ main {
 }
 
 .showMoreButton span {
+  text-align: center;
+  border: 1px solid #3a4251;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
   /* background-color: #3a4251; */
   border: #3a4251 solid 2px;
+
   padding: 1% 2%;
   color: black;
   border-radius: 20px;
