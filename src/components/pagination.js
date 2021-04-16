@@ -15,7 +15,7 @@ const MainContent = (fromParent) => {
   return (
     <div className="Pages-selector-section">
       {pages.map((e) => (
-        <span class="pagination_button" onClick={() => onClickPage({ e })}>
+        <span className="pagination_button" onClick={() => onClickPage({ e })}>
           {e}
         </span>
       ))}

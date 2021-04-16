@@ -16,14 +16,14 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
     else
       return (
         <div
-          style={{ background: `#3a4251`, color: `#eee`, cursor: `pointer` }}
+          style={{ background: `#6C63FF`, color: `white`, cursor: `pointer` }}
         >
           {selectedTopics}{" "}
           <span
             style={{ padding: `5px` }}
             onClick={() => onClickDeselct({ selectedTopics })}
           >
-            &#10006;
+            &#10007;
           </span>
         </div>
       );
@@ -99,7 +99,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
         <div className="tags-values">
           {filteredTopics.slice(0, topicVisible).map((e) => (
             <div
-              style={{ background: `#eee` }}
+              className="tags-Values-style"
               onClick={() => onClickTopic(e.keyword)}
             >
               {e.keyword} <span className="tags-counts">{e.frequency}</span>
