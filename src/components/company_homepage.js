@@ -10,22 +10,22 @@ const RightTags = ({ setPassedCompany }) => {
   const [companyVisible, setCompanyVisible] = React.useState(10);
 
   const onClickShowMore = () => {
-    setCompanyVisible(companyVisible + 10)
-  }
+    setCompanyVisible(companyVisible + 10);
+  };
 
   const SelectedTagDisplay = () => {
     if (selectedCompanies == null || selectedCompanies === "") return null;
     else
       return (
         <div
-          style={{ background: `#3a4251`, color: `#eee`, cursor: `pointer` }}
+          style={{ background: `#6C63FF`, color: `white`, cursor: `pointer` }}
         >
           {selectedCompanies}{" "}
           <span
             style={{ padding: `5px` }}
             onClick={() => onClickDeselct(selectedCompanies)}
           >
-            &#10006;
+            &#10007;
           </span>
         </div>
       );
@@ -99,7 +99,7 @@ const RightTags = ({ setPassedCompany }) => {
         <div className="tags-values">
           {filteredTopics.slice(0, companyVisible).map((e) => (
             <div
-              style={{ background: `#eee` }}
+              className="tags-Values-style"
               onClick={() => onClickTopic(e.company)}
             >
               {e.company}
@@ -109,9 +109,11 @@ const RightTags = ({ setPassedCompany }) => {
         </div>
 
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
-            <span>Show More &nbsp; <i className="fa fa-caret-down"></i></span>
+          <span class="text">
+            Show More &nbsp;
+            <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
+          </span>
         </div>
-        
       </div>
     </div>
   );

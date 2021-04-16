@@ -1,3 +1,4 @@
+import { check } from "prettier";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
@@ -29,13 +30,25 @@ const Header = ({ setSelectedNav }) => {
     <div>
       <nav>
         <div className="navLinks">
-          <button className={latest} onClick={() => onClickNav("latest")}>
+          <button
+            className={latest}
+            onClick={() => onClickNav("latest")}
+            style={{ cursor: `pointer` }}
+          >
             Latest
           </button>
-          <button className={liked} onClick={() => onClickNav("liked")}>
+          <button
+            className={liked}
+            onClick={() => onClickNav("liked")}
+            style={{ cursor: `pointer` }}
+          >
             Top Liked
           </button>
-          <button className={viewed} onClick={() => onClickNav("viewed")}>
+          <button
+            className={viewed}
+            onClick={() => onClickNav("viewed")}
+            style={{ cursor: `pointer` }}
+          >
             Top Viewed
           </button>
         </div>

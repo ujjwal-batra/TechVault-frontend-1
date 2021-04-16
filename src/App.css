@@ -11,6 +11,10 @@
   color: #212529;
 }
 
+::selection {
+  background-color: #fae69e;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .app {
     scroll-behavior: smooth;
@@ -98,6 +102,27 @@ nav {
 main {
   display: flex;
   flex-direction: row;
+}
+
+
+.loading {
+  display: none;
+}
+
+.loader-ellips {
+  font-size: 10px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 2px auto 20px;
+}
+
+.loader-ellips__dot {
+  font-size: 10px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 2px auto 20px;
 }
 
 .left-container {
@@ -214,17 +239,28 @@ main {
   align-items: center;
 }
 
+
+/* .tags-values div:hover {
+  color: white;
+  background-color: #6C63FF;
+} */
+
 .tags-counts {
   cursor: pointer;
   margin-left: 8px;
   border-radius: 25px;
-  background: #3a4251;
+  background: #6C63FF;
   color: #eee;
   padding: 0 6px;
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
   align-items: center;
+}
+
+.tags-counts:hover {
+  color: white;
+  background-color: #3a4251;
 }
 
 .search-tags {
@@ -244,18 +280,34 @@ main {
   font-size: 12px;
 }
 
-.showMoreButton{
+.showMoreButton {
   text-align: center;
-  font-size: small;
   margin: 10px 0px;
+  white-space: wrap;
+  align-items: center;
 }
-.showMoreButton span{
-  /* background-color: #3a4251; */
-  border: #3a4251 solid 2px;
-  padding: 1% 2%;
+
+
+.showMoreButton span {
+  text-align: center;
+  align-items: center;
+  border-color: #d3cdcd;
+  /* border: 0.1em solid #3a4251; */
+  font-size: 0.7em;
+  font-weight: 450;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid #9ba1ac;
+  padding: 2px 4px;
   color: black;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.showMoreButton span:hover {
+  color: white;
+  background-color: #6C63FF;
 }
 
 /* Homepage blogs css */
@@ -321,7 +373,7 @@ a {
   padding: 5px;
 }
 
-.content-time{
+.content-time {
   margin-top: -20px;
   margin-left: 1%;
 }
@@ -379,8 +431,9 @@ a {
   .contentContainer {
     flex: 100%;
   }
+
   .statsContainer,
-  .blankContainer{
+  .blankContainer {
     flex: 50%;
   }
 
@@ -424,13 +477,17 @@ a {
   object-fit: cover;
   margin-right: 5px;
   margin-bottom: 5px;
-  background-color: #D3AA4D;
+  background-color: #f3ab02;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
   border-radius: 0.95em;
   font-size: 70%;
   padding: 6px 8px;
+}
+
+.content-tags div:hover {
+  background-color: #6C63FF;
 }
 
 .navLinks {
@@ -456,7 +513,6 @@ a {
 
 .navLinks select {
   background: none;
-  /* border: none; */
   padding: 5px;
   font-size: 15px;
 }
@@ -465,10 +521,6 @@ a {
   margin: 0;
   padding: 0;
   color: #000000a6;
-}
-
-.pagination_button_active {
-  background-color: #37474f;
 }
 
 .pagination_button {
@@ -484,6 +536,11 @@ a {
   margin: 5px;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.pagination_button:hover {
+  color: white;
+  background-color: #6C63FF;
 }
 
 .Pages-selector-section {
