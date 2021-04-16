@@ -12,7 +12,6 @@ function App() {
   const [selevtedNav, setSelectedNav] = useState("latest");
   const [passedTopics, setPassedTopic] = useState("");
   const [passedCompany, setPassedCompany] = useState("");
-  const [pageNo, setPageNo] = React.useState(0);
   const [hiddenSection, setHiddenSection] = React.useState(
     "hiddenDropdownFilter"
   );
@@ -36,14 +35,10 @@ function App() {
               <div>
                 <MainContent
                   setPassedTopic={setPassedTopic}
-                  pageNo={pageNo}
                   selevtedNav={selevtedNav}
                   passedTopics={passedTopics}
                   passedCompany={passedCompany}
                 />
-              </div>
-              <div className="page-selector">
-                <Pagination setPageNo={setPageNo} />
               </div>
             </div>
           </div>
@@ -66,7 +61,6 @@ function App() {
               <Topics
                 passedTopics={passedTopics}
                 setPassedTopic={setPassedTopic}
-                setPageNo={setPageNo}
               />
               <Company setPassedCompany={setPassedCompany} />
             </div>
