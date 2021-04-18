@@ -20,7 +20,9 @@ function App() {
     };
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
+      headers: {
+        "Content-Type": "application/json; char set=utf-8",
+      },
       body: JSON.stringify(details),
     };
     try {
@@ -47,6 +49,7 @@ function App() {
             src="https://img.icons8.com/ios/452/edit-user-male.png"
             width="100px"
             height="100px"
+            alt="User"
           />
         </span>
         <span className="headingSignupText">
@@ -56,14 +59,14 @@ function App() {
       </div>
       <div method="POST" className="signupForm">
         <input
-          class=""
+          className=""
           type="text"
           name="username"
           placeholder="Username..."
           onChange={onChangeUsername}
         />
         <input
-          class=""
+          className=""
           type="text"
           name="password"
           placeholder="Password..."

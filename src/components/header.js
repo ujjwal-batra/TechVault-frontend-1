@@ -12,13 +12,16 @@ const header = () => {
           </span>
         </div>
         <div className="headerLinks">
-          
           <span className="loginButtonHeader">
             <span>
-              <Link className="loginButton" to="/login">LogIn</Link>
+              <Link className="loginButton" to="/login">
+                LogIn
+              </Link>
             </span>
             <span>
-              <Link className="loginButton" to="/signup">/Register</Link>
+              <Link className="loginButton" to="/signup">
+                /Register
+              </Link>
             </span>
           </span>
         </div>

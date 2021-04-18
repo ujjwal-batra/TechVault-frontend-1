@@ -12,78 +12,78 @@ const MainContent = (fromSiblings) => {
     fromSiblings.setPassedTopic(e);
   };
 
-
   const [isFetching, setIsFetching] = useState(false);
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   useEffect(() => {
-    console.log("ujjwal");
     if (!isFetching) return;
     fetchMoreListItems();
-  }, [isFetching]);
+  }, [fetchMoreListItems, isFetching]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function handleScroll() {
     var x = document.documentElement.scrollTop + 1;
-    if (window.innerHeight + x <= document.documentElement.offsetHeight || isFetching) return;
-    console.log("trying")
+    if (
+      window.innerHeight + x <= document.documentElement.offsetHeight ||
+      isFetching
+    )
+      return;
     setIsFetching(true);
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function fetchMoreListItems() {
     setTimeout(() => {
-          console.log("fetching")
-          try {
-                let link = prevLink + "?pageNo=" + loadNo,
-                  cond = false;
-                console.log(link);
-                fetch(link)
-                  .then((results) => results.json())
-                  .then((data) => {
-                    for (var i = 0; i < data.length; i++) {
-                      var companyLink = data[i].link.substring(8, data[i].link.length);
-                      var imgLink = "";
-                      for (let j = 0; j < companyLink.length; j++) {
-                        if (companyLink[j] === "/") break;
-                        imgLink += companyLink[j];
-                      }
-                      if (imgLink === "tech.ebayinc.comhttps:")
-                        imgLink = "tech.ebayinc.com";
-                      imgLink = "//logo.clearbit.com/" + imgLink + "?size=180";
-                      // console.log(imgLink);
-                      var x = {
-                        id: data[i].id,
-                        author: data[i].author,
-                        company: data[i].company,
-                        link: data[i].link,
-                        date: data[i].date,
-                        blogAbstract: data[i].blogAbstract,
-                        title: data[i].title,
-                        uuid: data[i].uuid,
-                        likes: data[i].likes,
-                        views: data[i].views,
-                        comments: data[i].comments,
-                        keywords: data[i].keywords,
-                        imgLink: imgLink,
-                        commentLink: "comment/" + data[i].id,
-                      };
-                      if (blog.indexOf(x) === -1) {
-                          blog.push(x);
-                      }
-                    }
-                  }); // fetching latest blog
-              } catch (err) {
-                alert(err); // Failed to fetch
+      console.log("fetching");
+      try {
+        let link = prevLink + "?pageNo=" + loadNo,
+          cond = false;
+        console.log(link);
+        fetch(link)
+          .then((results) => results.json())
+          .then((data) => {
+            for (var i = 0; i < data.length; i++) {
+              var companyLink = data[i].link.substring(8, data[i].link.length);
+              var imgLink = "";
+              for (let j = 0; j < companyLink.length; j++) {
+                if (companyLink[j] === "/") break;
+                imgLink += companyLink[j];
               }
-      
+              if (imgLink === "tech.ebayinc.comhttps:")
+                imgLink = "tech.ebayinc.com";
+              imgLink = "//logo.clearbit.com/" + imgLink + "?size=180";
+              var x = {
+                id: data[i].id,
+                author: data[i].author,
+                company: data[i].company,
+                link: data[i].link,
+                date: data[i].date,
+                blogAbstract: data[i].blogAbstract,
+                title: data[i].title,
+                uuid: data[i].uuid,
+                likes: data[i].likes,
+                views: data[i].views,
+                comments: data[i].comments,
+                keywords: data[i].keywords,
+                imgLink: imgLink,
+                commentLink: "comment/" + data[i].id,
+              };
+              if (blog.indexOf(x) === -1) {
+                blog.push(x);
+              }
+            }
+          }); // fetching latest blog
+      } catch (err) {
+        alert(err); // Failed to fetch
+      }
+
       setIsFetching(false);
       setLoadNo(loadNo + 1);
     }, 2000);
   }
-
-
 
   React.useEffect(() => {
     try {
@@ -93,41 +93,36 @@ const MainContent = (fromSiblings) => {
         fromSiblings.passedTopics === "" &&
         fromSiblings.passedCompany === ""
       ) {
-        link =
-          "http://localhost:8080/home/" +
-          fromSiblings.selevtedNav 
-          if(prevLink != link){
-            blog.length = 0;
-            setLoadNo(1);
-          }
+        link = "http://localhost:8080/home/" + fromSiblings.selevtedNav;
+        if (prevLink !== link) {
+          blog.length = 0;
+          setLoadNo(1);
+        }
       } else if (
         fromSiblings.passedCompany !== "" &&
         fromSiblings.passedTopics === ""
       ) {
         link =
-          "http://localhost:8080/search/company/" +
-          fromSiblings.passedCompany
-          if(prevLink != link){
-            blog.length = 0;
-            setLoadNo(1);
-          }
+          "http://localhost:8080/search/company/" + fromSiblings.passedCompany;
+        if (prevLink !== link) {
+          blog.length = 0;
+          setLoadNo(1);
+        }
       } else if (
         fromSiblings.passedCompany === "" &&
         fromSiblings.passedTopics !== ""
       ) {
         link =
-          "http://localhost:8080/search/keyword/" +
-          fromSiblings.passedTopics 
-          if(prevLink != link){
-            blog.length = 0;
-            setLoadNo(1);
-          }
+          "http://localhost:8080/search/keyword/" + fromSiblings.passedTopics;
+        if (prevLink !== link) {
+          blog.length = 0;
+          setLoadNo(1);
+        }
       } else {
         link =
-          "http://localhost:8080/search/keyword/" +
-          fromSiblings.passedTopics 
+          "http://localhost:8080/search/keyword/" + fromSiblings.passedTopics;
         cond = true;
-        if(prevLink != link){
+        if (prevLink !== link) {
           blog.length = 0;
           setLoadNo(1);
         }
@@ -160,7 +155,7 @@ const MainContent = (fromSiblings) => {
               comments: data[i].comments,
               keywords: data[i].keywords,
               imgLink: imgLink,
-              commentLink: "comment/" + data[i].id
+              commentLink: "comment/" + data[i].id,
             };
             if (blog.indexOf(x) === -1) {
               if (cond === true && fromSiblings.passedCompany === x.company)
@@ -173,7 +168,7 @@ const MainContent = (fromSiblings) => {
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, [fromSiblings]);
+  }, [blog, fromSiblings, prevLink]);
 
   return (
     <div>
@@ -224,7 +219,7 @@ const MainContent = (fromSiblings) => {
             <div className="statsContainer">
               <div>
                 <span>
-                  <i class="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
+                  <i className="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
                 </span>{" "}
                 {e.likes}
               </div>
@@ -233,14 +228,14 @@ const MainContent = (fromSiblings) => {
 
               <div>
                 <span>
-                  <i class="fa fa-comment-o" aria-hidden="true"></i>{" "}
+                  <i className="fa fa-comment-o" aria-hidden="true"></i>{" "}
                 </span>
                 {e.comments}
               </div>
               <br></br>
               <div>
                 <span>
-                  <i class="fa fa-book" aria-hidden="true"></i>{" "}
+                  <i className="fa fa-book" aria-hidden="true"></i>{" "}
                 </span>
                 Blog
               </div>

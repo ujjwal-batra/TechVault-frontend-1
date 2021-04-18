@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "font-awesome/css/font-awesome.min.css";
 
-let tempSelectedTopics = [];
+/* let tempSelectedTopics = []; */
 
 const RightTags = ({ setPassedTopic }, passedTopics) => {
   const [topic, setTopic] = React.useState([]);
@@ -77,8 +77,8 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
     <div>
       <div className="tagsContainerTopics">
         <div className="tags-heading">
-          <span class="text-300 text-lg tags-title">
-            <i class="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
+          <span className="text-300 text-lg tags-title">
+            <i className="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
           </span>
 
           <div className="tags-values">
@@ -87,7 +87,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
 
           <div className="search-tags">
             <input
-              class="search-tags-input"
+              className="search-tags-input"
               type="text"
               name="topicSearch"
               placeholder="Search for Tags"
@@ -107,7 +107,7 @@ const RightTags = ({ setPassedTopic }, passedTopics) => {
           ))}
         </div>
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
-          <span class="text">
+          <span className="text">
             Show More &nbsp;
             <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
           </span>
