@@ -1,11 +1,13 @@
 {
   "name": "techvault",
   "version": "0.1.0",
-  "private": true,
+  "description": "Contributing to open source can be a rewarding way to learn, teach, and build experience in just about any skill you can imagine.",
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
     "font-awesome": "^4.7.0",
     "jsonfile": "^6.1.0",
     "mime": "^1.6.0",
