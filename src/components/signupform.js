@@ -32,7 +32,9 @@ function App() {
     };
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
       body: JSON.stringify(details),
     };
     try {
@@ -71,28 +73,28 @@ function App() {
       </div>
       <div method="POST" className="signupForm">
         <input
-          class=""
+          className=""
           type="text"
           name="username"
           placeholder="Username..."
           onChange={onChangeUsername}
         />
         <input
-          class=""
+          className=""
           type="email"
           name="email"
           placeholder="Email..."
           onChange={onChangeEmail}
         />
         <input
-          class=""
+          className=""
           type="text"
           name="password"
           placeholder="Password..."
           onChange={onChangePassword}
         />
         <input
-          class=""
+          className=""
           type="text"
           name="confirmpass"
           placeholder="Confirm password..."

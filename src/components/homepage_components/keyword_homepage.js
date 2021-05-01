@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 
 const RightTags = ({ setPassedTopic }) => {
@@ -80,8 +80,8 @@ const RightTags = ({ setPassedTopic }) => {
     <div>
       <div className="tagsContainerTopics">
         <div className="tags-heading">
-          <span class="text-300 text-lg tags-title">
-            <i class="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
+          <span className="text-300 text-lg tags-title">
+            <i className="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
           </span>
 
           {/* Selectrd tag display */}
@@ -92,7 +92,7 @@ const RightTags = ({ setPassedTopic }) => {
           {/* input container for search */}
           <div className="search-tags">
             <input
-              class="search-tags-input"
+              className="search-tags-input"
               type="text"
               name="topicSearch"
               placeholder="Search for Tags"
@@ -115,7 +115,7 @@ const RightTags = ({ setPassedTopic }) => {
 
         {/* show more button */}
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
-          <span class="text">
+          <span className="text">
             Show More &nbsp;
             <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
           </span>

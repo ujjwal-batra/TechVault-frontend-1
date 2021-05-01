@@ -16,15 +16,18 @@ const MainContent = (fromSiblings) => {
   
   // To check scroll
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   // handle stroll to bottom
   function handleScroll() {
     var x = document.documentElement.scrollTop + 1;
-    if (window.innerHeight + x <= document.documentElement.offsetHeight || isFetching) return;
-    console.log("trying")
+    if (
+      window.innerHeight + x <= document.documentElement.offsetHeight ||
+      isFetching
+    )
+      return;
     setIsFetching(true);
   }
 
@@ -122,7 +125,7 @@ const MainContent = (fromSiblings) => {
       } else {
         link = "http://localhost:8080/search/keyword/" + fromSiblings.passedTopics 
         cond = true;
-        if(prevLink != link){
+        if (prevLink !== link) {
           blog.length = 0;
           setLoadNo(1);
         }
@@ -156,7 +159,7 @@ const MainContent = (fromSiblings) => {
               comments: data[i].comments,
               keywords: data[i].keywords,
               imgLink: imgLink,
-              commentLink: "comment/" + data[i].id
+              commentLink: "comment/" + data[i].id,
             };
             if (blog.indexOf(x) === -1) {
               if (cond === true && fromSiblings.passedCompany === x.company)
@@ -169,7 +172,7 @@ const MainContent = (fromSiblings) => {
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, [fromSiblings]);
+  }, [blog, fromSiblings, prevLink]);
 
   return (
     <div>
@@ -224,21 +227,21 @@ const MainContent = (fromSiblings) => {
             <div className="statsContainer">
               <div>
                 <span>
-                  <i class="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
+                  <i className="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
                 </span>{" "}
                 {e.likes}
               </div>
               <br></br>
               <div>
                 <span>
-                  <i class="fa fa-comment-o" aria-hidden="true"></i>{" "}
+                  <i className="fa fa-comment-o" aria-hidden="true"></i>{" "}
                 </span>
                 {e.comments}
               </div>
               <br></br>
               <div>
                 <span>
-                  <i class="fa fa-book" aria-hidden="true"></i>{" "}
+                  <i className="fa fa-book" aria-hidden="true"></i>{" "}
                 </span>
                 Blog
               </div>

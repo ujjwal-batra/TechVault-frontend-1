@@ -291,10 +291,12 @@ main {
 
 
 .showMoreButton span {
+
+  color: white;
+  background-color: #6C63FF;
   text-align: center;
   align-items: center;
-  border-color: #d3cdcd;
-  /* border: 0.1em solid #3a4251; */
+  /* border-color: #d3cdcd; */
   font-size: 0.7em;
   font-weight: 450;
   font-size: 14px;
@@ -302,14 +304,14 @@ main {
   line-height: 1.5;
   border: 1px solid #9ba1ac;
   padding: 2px 4px;
-  color: black;
+  color: white;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .showMoreButton span:hover {
-  color: white;
-  background-color: #6C63FF;
+  color: black;
+  background-color: #eee;
 }
 
 /* Homepage blogs css */

@@ -85,8 +85,9 @@ const RightTags = ({ setPassedCompany }) => {
     <div>
       <div className="tagsContainerCompanies">
         <div className="tags-heading">
-          <span class=" tags-title">
-            <i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Companies
+          <span className=" tags-title">
+            <i className="fa fa-building-o" aria-hidden="true"></i>&nbsp;
+            Companies
           </span>
 
           {/* selected tags */}
@@ -95,7 +96,7 @@ const RightTags = ({ setPassedCompany }) => {
           </div>
           <div className="search-tags">
             <input
-              class="search-tags-input"
+              className="search-tags-input"
               type="text"
               name="topicSearch"
               placeholder="Search for Tags"
@@ -119,7 +120,7 @@ const RightTags = ({ setPassedCompany }) => {
 
         {/* show more button */}
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
-          <span class="text">
+          <span className="text">
             Show More &nbsp;
             <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
           </span>
