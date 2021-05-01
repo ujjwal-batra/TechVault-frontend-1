@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useLocation } from "react-router-dom";
-import Header from "./components/header";
+import Header from "../components/header";
 
 function CommentPage() {
   const [comments, setComments] = React.useState([]);

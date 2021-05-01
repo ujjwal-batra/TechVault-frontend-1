@@ -1,35 +1,38 @@
-import "./App.css";
-import MainContent from "./components/MainContent";
-import Header from "./components/header";
-import Navbar from "./components/navbar_homepage";
-import Topics from "./components/keyword_homepage";
-import Company from "./components/company_homepage";
-import Pagination from "./components/pagination";
-import React, { useState, useEffect, useRef } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
+import React, { useState} from "react";
+// components
+import MainContent from "../components/homepage_components/MainContent";
+import Header from "../components/header";
+import Navbar from "../components/homepage_components/navbar_homepage";
+import Topics from "../components/homepage_components/keyword_homepage";
+import Company from "../components/homepage_components/company_homepage";
+
 
 function App() {
+  // State variables 
   const [selevtedNav, setSelectedNav] = useState("latest");
   const [passedTopics, setPassedTopic] = useState("");
   const [passedCompany, setPassedCompany] = useState("");
-  const [hiddenSection, setHiddenSection] = React.useState(
-    "hiddenDropdownFilter"
-  );
+  const [hiddenSection, setHiddenSection] = React.useState("hiddenDropdownFilter");
 
+  // dropdown on mobile View
   const onClickMenu = () => {
     if (hiddenSection === "hiddenDropdownFilter")
       setHiddenSection("showDropdownFilter");
     else setHiddenSection("hiddenDropdownFilter");
-    console.log(hiddenSection);
   };
 
+  // return body for homepage
   return (
-    <div className="app">
+    <div>
+      {/* Header and main section */}
       <div className="homepageWhole">
+        {/* Header component */}
         <Header />
+        {/* Navbar component */}
         <Navbar setSelectedNav={setSelectedNav} />
-
+        {/* blogs and tags section */}
         <main className="homepageContainer">
+          {/* Blogs container */}
           <div className="left-container">
             <div className="mainContent left-tab">
               <div>
@@ -42,8 +45,9 @@ function App() {
               </div>
             </div>
           </div>
-
+          {/* Tags and filter container */}
           <div className="right-container">
+            {/* button for dropdown in mobile view */}
             <div className="filterButton" onClick={() => onClickMenu()}>
               <div className="bar1"></div>
               <div className="bar2"></div>
