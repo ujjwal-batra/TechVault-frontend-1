@@ -4,6 +4,7 @@ const header = () => {
   return (
     <div>
       <header className="headerContainer">
+        {/* Company name */}
         <div className="heading">
           <span>
             <Link className="techvault" to="/">
@@ -11,8 +12,8 @@ const header = () => {
             </Link>
           </span>
         </div>
-        <div className="headerLinks">
-          
+          {/* Login Signup */}
+        <div className="headerLinks">  
           <span className="loginButtonHeader">
             <span>
               <Link className="loginButton" to="/login">LogIn</Link>

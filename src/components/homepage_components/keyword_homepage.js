@@ -1,29 +1,25 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import "font-awesome/css/font-awesome.min.css";
 
-const RightTags = ({ setPassedCompany }) => {
-  const [company, setCompany] = React.useState([]);
-  const [companies, setCompanies] = React.useState([]);
+const RightTags = ({ setPassedTopic }) => {
+  const [topic, setTopic] = React.useState([]);
+  const [topics, setTopics] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const [selectedCompanies, setSelectedCompanies] = React.useState();
-  const [companyVisible, setCompanyVisible] = React.useState(10);
+  const [selectedTopics, setSelectedTopics] = React.useState(null);
+  const [topicVisible, setTopicVisible] = React.useState(5);
 
-  const onClickShowMore = () => {
-    setCompanyVisible(companyVisible + 10);
-  };
-
+  // component for returning selected tags
   const SelectedTagDisplay = () => {
-    if (selectedCompanies == null || selectedCompanies === "") return null;
+    if (selectedTopics === null || selectedTopics === "") return null;
     else
       return (
         <div
           style={{ background: `#6C63FF`, color: `white`, cursor: `pointer` }}
         >
-          {selectedCompanies}{" "}
+          {selectedTopics}{" "}
           <span
             style={{ padding: `5px` }}
-            onClick={() => onClickDeselct(selectedCompanies)}
+            onClick={() => onClickDeselct({ selectedTopics })}
           >
             &#10007;
           </span>
@@ -31,61 +27,69 @@ const RightTags = ({ setPassedCompany }) => {
       );
   };
 
+  // show more for topics
+  const onClickShowMore = () => {
+    setTopicVisible(topicVisible + 10);
+  };
+
+  // search input tracker
   const onchange = (e) => {
     setSearch(e.target.value);
     // console.log(e.target.value);
   };
 
-  const filteredTopics = companies.filter((x) => {
-    return x.company.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+  // search for topic
+  const filteredTopics = topics.filter((x) => {
+    return x.keyword.toLowerCase().indexOf(search.toLowerCase()) !== -1;
   });
 
+  // On topic click
   const onClickTopic = (e) => {
-    setSelectedCompanies(e);
-    setPassedCompany(e);
+    setSelectedTopics(e);
+    setPassedTopic(e);
   };
-
+  // on deselecting topic
   const onClickDeselct = (e) => {
-    setSelectedCompanies("");
-    setPassedCompany("");
+    setSelectedTopics("");
+    setPassedTopic("");
   };
 
+  // fetch call to get keywords
   React.useEffect(() => {
     try {
-      fetch("http://localhost:8080/home/blogsCount")
+      fetch("http://localhost:8080/home/keywordsCount")
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {
             var x = {
-              company: data[i].company,
-              count: data[i].count,
+              keyword: data[i].keyword,
+              frequency: data[i].frequency,
             };
-            if (
-              company.indexOf(x) === -1 &&
-              x.company != null &&
-              x.count != null
-            ) {
-              company.push(x);
+            if (topic.indexOf(x) === -1) {
+              topic.push(x);
             }
           }
-          setCompanies(company);
+          setTopics(topic);
         }); // fetching latest blogs
     } catch (err) {
       alert(err); // Failed to fetch
     }
-  }, [company]);
+  }, [topic]);
 
   return (
     <div>
-      <div className="tagsContainerCompanies">
+      <div className="tagsContainerTopics">
         <div className="tags-heading">
-          <span class=" tags-title">
-            <i class="fa fa-building-o" aria-hidden="true"></i>&nbsp; Companies
+          <span class="text-300 text-lg tags-title">
+            <i class="fa fa-bookmark-o" aria-hidden="true"></i>&nbsp; Topics
           </span>
 
+          {/* Selectrd tag display */}
           <div className="tags-values">
             <SelectedTagDisplay />
           </div>
+
+          {/* input container for search */}
           <div className="search-tags">
             <input
               class="search-tags-input"
@@ -96,18 +100,20 @@ const RightTags = ({ setPassedCompany }) => {
             />
           </div>
         </div>
+
+        {/* unselected tags display */}
         <div className="tags-values">
-          {filteredTopics.slice(0, companyVisible).map((e) => (
+          {filteredTopics.slice(0, topicVisible).map((e) => (
             <div
               className="tags-Values-style"
-              onClick={() => onClickTopic(e.company)}
+              onClick={() => onClickTopic(e.keyword)}
             >
-              {e.company}
-              <span className="tags-counts"> {e.count}</span>
+              {e.keyword} <span className="tags-counts">{e.frequency}</span>
             </div>
           ))}
         </div>
 
+        {/* show more button */}
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
           <span class="text">
             Show More &nbsp;
