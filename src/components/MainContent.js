@@ -7,6 +7,7 @@ const MainContent = (fromSiblings) => {
   const [blogs, setBlogs] = React.useState([]);
   const [prevLink, setPrevLink] = React.useState("");
   const [loadNo, setLoadNo] = React.useState(1);
+  const [loader, setLoader] = React.useState(1);
 
   const onClickTopic = (e) => {
     fromSiblings.setPassedTopic(e);
@@ -22,7 +23,9 @@ const MainContent = (fromSiblings) => {
   useEffect(() => {
     console.log("ujjwal");
     if (!isFetching) return;
+    setLoader("loading");
     fetchMoreListItems();
+    setLoader("hideLoading");
   }, [isFetching]);
 
   function handleScroll() {
@@ -248,6 +251,14 @@ const MainContent = (fromSiblings) => {
           </div>
         </div>
       ))}
+      <div className="loading">
+        <div className="loader-ellips">
+            <span className="loader-ellips__dot"></span>
+            <span className="loader-ellips__dot"></span>
+            <span className="loader-ellips__dot"></span>
+            <span className="loader-ellips__dot"></span>
+        </div>
+      </div>
     </div>
   );
 };
