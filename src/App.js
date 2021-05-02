@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import './styles/App.css'
+import "./styles/App.css";
 //Routes used on the website
 import Homepage from "./pages/homepage";
 import Signup from "./pages/signup";

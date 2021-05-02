@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 // components
 import MainContent from "../components/homepage_components/MainContent";
 import Header from "../components/header";
@@ -6,13 +6,14 @@ import Navbar from "../components/homepage_components/navbar_homepage";
 import Topics from "../components/homepage_components/keyword_homepage";
 import Company from "../components/homepage_components/company_homepage";
 
-
 function App() {
-  // State variables 
+  // State variables
   const [selevtedNav, setSelectedNav] = useState("latest");
   const [passedTopics, setPassedTopic] = useState("");
   const [passedCompany, setPassedCompany] = useState("");
-  const [hiddenSection, setHiddenSection] = React.useState("hiddenDropdownFilter");
+  const [hiddenSection, setHiddenSection] = React.useState(
+    "hiddenDropdownFilter"
+  );
 
   // dropdown on mobile View
   const onClickMenu = () => {

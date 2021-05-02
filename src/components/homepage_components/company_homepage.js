@@ -104,7 +104,7 @@ const RightTags = ({ setPassedCompany }) => {
             />
           </div>
         </div>
-        
+
         {/* Tags unselected */}
         <div className="tags-values">
           {filteredTopics.slice(0, companyVisible).map((e) => (
