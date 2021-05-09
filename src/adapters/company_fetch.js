@@ -81,7 +81,7 @@ const RightTags = ({ setPassedCompany }) => {
             />
           </div>
         </div>
-        
+
         {/* Tags unselected */}
         <Tags 
             setSelectedTopics={setSelectedCompanies}

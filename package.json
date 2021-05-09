@@ -1,7 +1,7 @@
 {
   "name": "techvault",
   "version": "0.1.0",
-  "description": "Contributing to open source can be a rewarding way to learn, teach, and build experience in just about any skill you can imagine.",
+  "description": "Read All Technical Blogs of All Technologies by various companies.",
   "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

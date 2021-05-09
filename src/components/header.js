@@ -12,8 +12,8 @@ const header = () => {
             </Link>
           </span>
         </div>
-          {/* Login Signup */}
-        <div className="headerLinks">  
+        {/* Login Signup */}
+        <div className="headerLinks">
           <span className="loginButtonHeader">
             <span>
               <Link className="loginButton" to="/login">
