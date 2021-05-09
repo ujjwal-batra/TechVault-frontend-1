@@ -34,21 +34,21 @@ const Header = ({ setSelectedNav }) => {
             onClick={() => onClickNav("latest")}
             style={{ cursor: `pointer` }}
           >
-            Latest
+             &nbsp;Latest
           </button>
           <button
             className={liked}
             onClick={() => onClickNav("liked")}
             style={{ cursor: `pointer` }}
           >
-            Top Liked
+             &nbsp;Top Liked
           </button>
           <button
             className={viewed}
             onClick={() => onClickNav("viewed")}
             style={{ cursor: `pointer` }}
           >
-            Top Viewed
+            &nbsp; Top Viewed
           </button>
         </div>
       </nav>

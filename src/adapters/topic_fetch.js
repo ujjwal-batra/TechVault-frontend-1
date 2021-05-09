@@ -1,32 +1,16 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 
+import SelectedTags from "../components/homepage_components/homepage_selected_tags"
+import Tags from "../components/homepage_components/homepage_tags"
+
 const RightTags = ({ setPassedTopic }) => {
   const [topic, setTopic] = React.useState([]);
   const [topics, setTopics] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const [selectedTopics, setSelectedTopics] = React.useState(null);
+  const [selectedTopics, setSelectedTopics] = React.useState([]);
   const [topicVisible, setTopicVisible] = React.useState(5);
-
-  // component for returning selected tags
-  const SelectedTagDisplay = () => {
-    if (selectedTopics === null || selectedTopics === "") return null;
-    else
-      return (
-        <div
-          style={{ background: `#6C63FF`, color: `white`, cursor: `pointer` }}
-        >
-          {selectedTopics}{" "}
-          <span
-            style={{ padding: `5px` }}
-            onClick={() => onClickDeselct({ selectedTopics })}
-          >
-            &#10007;
-          </span>
-        </div>
-      );
-  };
-
+  const type = "topic"
   // show more for topics
   const onClickShowMore = () => {
     setTopicVisible(topicVisible + 10);
@@ -35,24 +19,12 @@ const RightTags = ({ setPassedTopic }) => {
   // search input tracker
   const onchange = (e) => {
     setSearch(e.target.value);
-    // console.log(e.target.value);
   };
 
   // search for topic
   const filteredTopics = topics.filter((x) => {
     return x.keyword.toLowerCase().indexOf(search.toLowerCase()) !== -1;
   });
-
-  // On topic click
-  const onClickTopic = (e) => {
-    setSelectedTopics(e);
-    setPassedTopic(e);
-  };
-  // on deselecting topic
-  const onClickDeselct = (e) => {
-    setSelectedTopics("");
-    setPassedTopic("");
-  };
 
   // fetch call to get keywords
   React.useEffect(() => {
@@ -85,10 +57,14 @@ const RightTags = ({ setPassedTopic }) => {
           </span>
 
           {/* Selectrd tag display */}
-          <div className="tags-values">
-            <SelectedTagDisplay />
+          <div className="tags-value">
+            <SelectedTags 
+                setSelectedTopics={setSelectedTopics} 
+                setPassedTopic={setPassedTopic} 
+                dataPassed={selectedTopics}
+            />
           </div>
-
+    
           {/* input container for search */}
           <div className="search-tags">
             <input
@@ -102,16 +78,13 @@ const RightTags = ({ setPassedTopic }) => {
         </div>
 
         {/* unselected tags display */}
-        <div className="tags-values">
-          {filteredTopics.slice(0, topicVisible).map((e) => (
-            <div
-              className="tags-Values-style"
-              onClick={() => onClickTopic(e.keyword)}
-            >
-              {e.keyword} <span className="tags-counts">{e.frequency}</span>
-            </div>
-          ))}
-        </div>
+        <Tags 
+            setSelectedTopics={setSelectedTopics}
+            setPassedTopic={setPassedTopic}
+            dataPassed={filteredTopics}
+            topicVisible={topicVisible}
+            type={type}
+        />
 
         {/* show more button */}
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
