@@ -1,36 +1,20 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import "font-awesome/css/font-awesome.min.css";
+
+import SelectedTags from "../components/homepage_components/homepage_selected_tags"
+import Tags from "../components/homepage_components/homepage_tags"
 
 const RightTags = ({ setPassedCompany }) => {
   const [company, setCompany] = React.useState([]);
   const [companies, setCompanies] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const [selectedCompanies, setSelectedCompanies] = React.useState();
+  const [selectedCompanies, setSelectedCompanies] = React.useState([]);
   const [companyVisible, setCompanyVisible] = React.useState(10);
+  const type = "company";
 
   // show more button
   const onClickShowMore = () => {
     setCompanyVisible(companyVisible + 10);
-  };
-
-  // component for selected company tag
-  const SelectedTagDisplay = () => {
-    if (selectedCompanies == null || selectedCompanies === "") return null;
-    else
-      return (
-        <div
-          style={{ background: `#6C63FF`, color: `white`, cursor: `pointer` }}
-        >
-          {selectedCompanies}{" "}
-          <span
-            style={{ padding: `5px` }}
-            onClick={() => onClickDeselct(selectedCompanies)}
-          >
-            &#10007;
-          </span>
-        </div>
-      );
   };
 
   // for handling search input
@@ -42,18 +26,6 @@ const RightTags = ({ setPassedCompany }) => {
   const filteredTopics = companies.filter((x) => {
     return x.company.toLowerCase().indexOf(search.toLowerCase()) !== -1;
   });
-
-  // on selection of company
-  const onClickTopic = (e) => {
-    setSelectedCompanies(e);
-    setPassedCompany(e);
-  };
-
-  // on deselecting companies
-  const onClickDeselct = (e) => {
-    setSelectedCompanies("");
-    setPassedCompany("");
-  };
 
   // fetching list of companies
   React.useEffect(() => {
@@ -91,9 +63,14 @@ const RightTags = ({ setPassedCompany }) => {
           </span>
 
           {/* selected tags */}
-          <div className="tags-values">
-            <SelectedTagDisplay />
+          <div className="tags-value">
+            <SelectedTags 
+                setSelectedTopics={setSelectedCompanies} 
+                setPassedTopic={setPassedCompany} 
+                dataPassed={selectedCompanies}
+            />
           </div>
+
           <div className="search-tags">
             <input
               className="search-tags-input"
@@ -106,17 +83,13 @@ const RightTags = ({ setPassedCompany }) => {
         </div>
 
         {/* Tags unselected */}
-        <div className="tags-values">
-          {filteredTopics.slice(0, companyVisible).map((e) => (
-            <div
-              className="tags-Values-style"
-              onClick={() => onClickTopic(e.company)}
-            >
-              {e.company}
-              <span className="tags-counts"> {e.count}</span>
-            </div>
-          ))}
-        </div>
+        <Tags 
+            setSelectedTopics={setSelectedCompanies}
+            setPassedTopic={setPassedCompany}
+            dataPassed={filteredTopics}
+            topicVisible={companyVisible}
+            type={type}
+        />
 
         {/* show more button */}
         <div className="showMoreButton" onClick={() => onClickShowMore()}>
