@@ -1,6 +1,7 @@
 import { FaRegThumbsUp } from "react-icons/fa";
 
 const blogStats = (e) => {
+  const type = e.stats.type.charAt(0).toUpperCase() + e.stats.type.slice(1);;
   return (
     <div className="statsContainer">
       {/* <div className="like-container">
@@ -21,7 +22,7 @@ const blogStats = (e) => {
         <span>
           <i className="fa fa-book" aria-hidden="true"></i>{" "}
         </span>
-        Blog
+        {type}
       </div>
     </div>
   );
