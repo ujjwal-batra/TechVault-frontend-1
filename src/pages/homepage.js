@@ -74,7 +74,7 @@ function App() {
       </div>
 
       {/* footer */}
-      <div className="footer">
+      {/* <div className="footer">
         <div className="footer-contact">
           <span className="footer-contact-item">Contact us on:</span>
           <a className="footer-contact-item" href="mailto:admin@techvault.com">
@@ -97,7 +97,7 @@ function App() {
           <a href="/site/privacy">Privacy | </a>
           <a href="/site/cookies-policy">Cookies policy</a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
