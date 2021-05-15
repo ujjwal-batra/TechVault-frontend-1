@@ -169,7 +169,6 @@ main {
 }
 
 @media screen and (max-width: 800px) {
-
   .left-container,
   .right-container {
     flex: 100%;
@@ -653,7 +652,6 @@ a {
 }
 
 @media (max-width: 800px) {
-
   .commentPageImage,
   .commentPageDetails {
     flex: 100%;
