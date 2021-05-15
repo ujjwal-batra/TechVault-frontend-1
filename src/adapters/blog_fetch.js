@@ -26,6 +26,7 @@ const MainContent = (fromSiblings) => {
   }, [handleScroll, blog]);
 
   // handle stroll to bottom
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function handleScroll() {
     var x = document.documentElement.scrollTop + 1;
     if (window.innerHeight + x <= document.documentElement.offsetHeight) return;
@@ -123,14 +124,14 @@ const MainContent = (fromSiblings) => {
     // setTimeout(() => {
     try {
       // scrolled get request
-      if (postReq == false) {
+      if (postReq === false) {
         let link = prevLink + "?pageNo=" + loadNo;
         getBlogRequest(link);
       }
       // scrolled post request
       else {
         var details;
-        if (prevLink == "http://localhost:8080/search/keyword/")
+        if (prevLink === "http://localhost:8080/search/keyword/")
           details = { searchWords: fromSiblings.passedTopics };
         else details = { searchWords: fromSiblings.passedCompany };
         var link = prevLink + "?pageNo=" + loadNo;
@@ -156,24 +157,24 @@ const MainContent = (fromSiblings) => {
       blog.length = 0;
       // Check for passed parameter to search
       if (
-        fromSiblings.passedTopics.length == 0 &&
-        fromSiblings.passedCompany.length == 0
+        fromSiblings.passedTopics.length === 0 &&
+        fromSiblings.passedCompany.length === 0
       ) {
         link = "http://localhost:8080/home/" + fromSiblings.selevtedNav;
         post_req = false;
         setPostReq(false);
         setLoadNo(1);
       } else if (
-        fromSiblings.passedCompany.length != 0 &&
-        fromSiblings.passedTopics.length == 0
+        fromSiblings.passedCompany.length !== 0 &&
+        fromSiblings.passedTopics.length === 0
       ) {
         link = "http://localhost:8080/search/company/";
         post_req = true;
         setPostReq(true);
         setLoadNo(1);
       } else if (
-        fromSiblings.passedCompany.length == 0 &&
-        fromSiblings.passedTopics.length != 0
+        fromSiblings.passedCompany.length === 0 &&
+        fromSiblings.passedTopics.length !== 0
       ) {
         link = "http://localhost:8080/search/keyword/";
         post_req = true;
@@ -188,7 +189,7 @@ const MainContent = (fromSiblings) => {
       }
 
       // initail get request
-      if (post_req == false) {
+      if (post_req === false) {
         setPrevLink(link);
         getBlogRequest(link);
       }
@@ -196,7 +197,7 @@ const MainContent = (fromSiblings) => {
       else {
         setPrevLink(link);
         var details;
-        if (link == "http://localhost:8080/search/keyword/")
+        if (link === "http://localhost:8080/search/keyword/")
           details = { searchWords: fromSiblings.passedTopics };
         else details = { searchWords: fromSiblings.passedCompany };
         postBlogRequest(details, link);

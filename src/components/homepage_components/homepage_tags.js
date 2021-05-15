@@ -3,7 +3,7 @@ const blogImage = (e) => {
     e.setSelectedTopics((arr) => [...arr, tag]);
     e.setPassedTopic((arr) => [...arr, tag]);
   };
-  if (e.type == "company") {
+  if (e.type === "company") {
     return (
       <div className="tags-values">
         {e.dataPassed.slice(0, e.topicVisible).map((tags) => (

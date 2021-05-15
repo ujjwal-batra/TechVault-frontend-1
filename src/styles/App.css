@@ -169,6 +169,7 @@ main {
 }
 
 @media screen and (max-width: 800px) {
+
   .left-container,
   .right-container {
     flex: 100%;
@@ -423,7 +424,7 @@ a {
 }
 
 .statsContainer div:nth-of-type(2) {
-  background-color: #f0f32b;
+  background-color: #f3ae1a;
 }
 
 .statsContainer div:nth-of-type(3) {
@@ -652,6 +653,7 @@ a {
 }
 
 @media (max-width: 800px) {
+
   .commentPageImage,
   .commentPageDetails {
     flex: 100%;

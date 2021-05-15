@@ -1,7 +1,7 @@
 const blogImage = (e) => {
   const onClickDeselct = (tag) => {
     const temp = e.dataPassed;
-    if (temp.length == 1) {
+    if (temp.length === 1) {
       e.setSelectedTopics([]);
       e.setPassedTopic([]);
       return;
@@ -17,7 +17,7 @@ const blogImage = (e) => {
     e.setSelectedTopics(temp);
     e.setPassedTopic(temp);
   };
-  if (e.dataPassed.length == 0) return null;
+  if (e.dataPassed.length === 0) return null;
   return (
     <div className="selected-tags-container">
       {e.dataPassed.map((tags) => (
