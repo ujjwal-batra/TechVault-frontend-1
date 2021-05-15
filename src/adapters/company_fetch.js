@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "font-awesome/css/font-awesome.min.css";
 
-import SelectedTags from "../components/homepage_components/homepage_selected_tags"
-import Tags from "../components/homepage_components/homepage_tags"
+import SelectedTags from "../components/homepage_components/homepage_selected_tags";
+import Tags from "../components/homepage_components/homepage_tags";
 
 const RightTags = ({ setPassedCompany }) => {
   const [company, setCompany] = React.useState([]);
@@ -64,10 +64,10 @@ const RightTags = ({ setPassedCompany }) => {
 
           {/* selected tags */}
           <div className="tags-value">
-            <SelectedTags 
-                setSelectedTopics={setSelectedCompanies} 
-                setPassedTopic={setPassedCompany} 
-                dataPassed={selectedCompanies}
+            <SelectedTags
+              setSelectedTopics={setSelectedCompanies}
+              setPassedTopic={setPassedCompany}
+              dataPassed={selectedCompanies}
             />
           </div>
 
@@ -83,12 +83,12 @@ const RightTags = ({ setPassedCompany }) => {
         </div>
 
         {/* Tags unselected */}
-        <Tags 
-            setSelectedTopics={setSelectedCompanies}
-            setPassedTopic={setPassedCompany}
-            dataPassed={filteredTopics}
-            topicVisible={companyVisible}
-            type={type}
+        <Tags
+          setSelectedTopics={setSelectedCompanies}
+          setPassedTopic={setPassedCompany}
+          dataPassed={filteredTopics}
+          topicVisible={companyVisible}
+          type={type}
         />
 
         {/* show more button */}

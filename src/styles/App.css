@@ -1,12 +1,14 @@
-*{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .app {
   width: 100%;
   margin: 0px auto;
   height: 95%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-variant: tabular-nums;
   background-color: #fff;
   font-size: 1rem;
@@ -35,7 +37,7 @@
   height: 5vh;
   display: flex;
   align-items: center;
-  background-color: #6C63FF;
+  background-color: #6c63ff;
 }
 
 .headerLinks {
@@ -52,7 +54,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 23px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -65,13 +67,13 @@
 .loginButtonHeader {
   padding: 4%;
   background-color: white;
-  color: #6C63FF;
+  color: #6c63ff;
   border-radius: 3px;
 }
 
 .loginButtonHeader a {
   text-decoration: none;
-  color: #6C63FF;
+  color: #6c63ff;
   font-weight: 600;
 }
 
@@ -99,7 +101,7 @@ nav {
   padding: 6px;
   font-size: 14px;
   border-radius: 10px;
-  border: 2px solid #e0e0e0;;
+  border: 2px solid #e0e0e0;
   position: relative;
   white-space: wrap;
 }
@@ -109,11 +111,9 @@ main {
   flex-direction: row;
 }
 
-
 .loading {
   display: block;
 }
-
 
 .loader-ellips {
   font-size: 18px;
@@ -137,7 +137,6 @@ main {
   flex: 80%;
   display: block;
   box-sizing: border-box;
-
 }
 
 .left-container .left-tab {
@@ -170,7 +169,6 @@ main {
 }
 
 @media screen and (max-width: 800px) {
-
   .left-container,
   .right-container {
     flex: 100%;
@@ -246,7 +244,6 @@ main {
   align-items: center;
 }
 
-
 /* .tags-values div:hover {
   color: white;
   background-color: #6C63FF;
@@ -256,7 +253,7 @@ main {
   cursor: pointer;
   margin-left: 8px;
   border-radius: 25px;
-  background: #6C63FF;
+  background: #6c63ff;
   color: #eee;
   padding: 0 6px;
   font-size: 13px;
@@ -294,11 +291,9 @@ main {
   align-items: center;
 }
 
-
 .showMoreButton span {
-
   color: white;
-  background-color: #6C63FF;
+  background-color: #6c63ff;
   text-align: center;
   align-items: center;
   /* border-color: #d3cdcd; */
@@ -339,7 +334,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
-  transition: background-color .25s, color .25s, box-shadow .25s;
+  transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
   box-shadow: 0 8px 42px -8px rgb(0 0 0 / 20%);
   border: 1px solid #f0f0f0;
 }
@@ -408,7 +403,7 @@ a {
 .statsContainer div {
   width: 50%;
   padding: 3px 4px;
-  background-color: #6C63FF;
+  background-color: #6c63ff;
   font-size: 19px;
   border-radius: 10px;
   font-weight: 500;
@@ -424,7 +419,7 @@ a {
 }
 
 .statsContainer div:nth-of-type(1) {
-  background-color: #1F6BCD
+  background-color: #1f6bcd;
 }
 
 .statsContainer div:nth-of-type(2) {
@@ -432,11 +427,10 @@ a {
 }
 
 .statsContainer div:nth-of-type(3) {
-  background-color: #1AB37C;
+  background-color: #1ab37c;
 }
 
 @media (max-width: 800px) {
-
   .contentContainer {
     flex: 100%;
   }
@@ -451,7 +445,7 @@ a {
     text-align: center;
   }
 
-  .statsContainer div{
+  .statsContainer div {
     text-align: center;
     width: 80px;
     margin: 10px;
@@ -468,8 +462,6 @@ a {
   margin: 5px 0px 2px;
   font-size: 22px;
 } */
-
-
 
 .content-description p {
   font-size: 14px;
@@ -501,7 +493,7 @@ a {
 }
 
 .content-tags div:hover {
-  background-color: #6C63FF;
+  background-color: #6c63ff;
 }
 
 .navLinks {
@@ -514,12 +506,11 @@ a {
   margin: 0px 5px;
   font-size: 17px;
   border-radius: 20px;
-  border: #6C63FF solid 3px;
+  border: #6c63ff solid 3px;
 }
 
-
 .fa-check {
-  background-color: #6C63FF !important;
+  background-color: #6c63ff !important;
   color: white;
   font-weight: 100;
 }
@@ -553,7 +544,7 @@ a {
 
 .pagination_button:hover {
   color: white;
-  background-color: #6C63FF;
+  background-color: #6c63ff;
 }
 
 .Pages-selector-section {
@@ -661,7 +652,6 @@ a {
 }
 
 @media (max-width: 800px) {
-
   .commentPageImage,
   .commentPageDetails {
     flex: 100%;
@@ -714,22 +704,22 @@ a {
   box-sizing: content-box !important;
 }
 
-.homepage-tags{
+.homepage-tags {
   width: 100%;
   height: auto;
 }
 
-.selected-tags-container{
+.selected-tags-container {
   display: flex;
   flex-wrap: wrap;
   padding-top: 10px;
 }
 
-.selected-tag-value{
+.selected-tag-value {
   cursor: pointer;
   margin: 3px;
   border-radius: 25px;
-  background: #6C63FF;
+  background: #6c63ff;
   color: #eee;
   padding: 4px 6px;
   font-size: 13px;

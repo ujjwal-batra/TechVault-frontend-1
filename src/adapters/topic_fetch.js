@@ -1,8 +1,8 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 
-import SelectedTags from "../components/homepage_components/homepage_selected_tags"
-import Tags from "../components/homepage_components/homepage_tags"
+import SelectedTags from "../components/homepage_components/homepage_selected_tags";
+import Tags from "../components/homepage_components/homepage_tags";
 
 const RightTags = ({ setPassedTopic }) => {
   const [topic, setTopic] = React.useState([]);
@@ -10,7 +10,7 @@ const RightTags = ({ setPassedTopic }) => {
   const [search, setSearch] = React.useState("");
   const [selectedTopics, setSelectedTopics] = React.useState([]);
   const [topicVisible, setTopicVisible] = React.useState(5);
-  const type = "topic"
+  const type = "topic";
   // show more for topics
   const onClickShowMore = () => {
     setTopicVisible(topicVisible + 10);
@@ -58,13 +58,13 @@ const RightTags = ({ setPassedTopic }) => {
 
           {/* Selectrd tag display */}
           <div className="tags-value">
-            <SelectedTags 
-                setSelectedTopics={setSelectedTopics} 
-                setPassedTopic={setPassedTopic} 
-                dataPassed={selectedTopics}
+            <SelectedTags
+              setSelectedTopics={setSelectedTopics}
+              setPassedTopic={setPassedTopic}
+              dataPassed={selectedTopics}
             />
           </div>
-    
+
           {/* input container for search */}
           <div className="search-tags">
             <input
@@ -78,12 +78,12 @@ const RightTags = ({ setPassedTopic }) => {
         </div>
 
         {/* unselected tags display */}
-        <Tags 
-            setSelectedTopics={setSelectedTopics}
-            setPassedTopic={setPassedTopic}
-            dataPassed={filteredTopics}
-            topicVisible={topicVisible}
-            type={type}
+        <Tags
+          setSelectedTopics={setSelectedTopics}
+          setPassedTopic={setPassedTopic}
+          dataPassed={filteredTopics}
+          topicVisible={topicVisible}
+          type={type}
         />
 
         {/* show more button */}
