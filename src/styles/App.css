@@ -374,7 +374,7 @@ a {
   padding-top: 10px;
   padding-right: 0;
   display: flex;
-  cursor: pointer;
+  /* cursor: pointer; */
   padding: 5px;
 }
 

@@ -55,14 +55,14 @@ function App() {
               <div className="bar3"></div>
             </div>
             <div className={hiddenSection}>
-              <div className="navSearch">
+              {/* <div className="navSearch">
                 <input
                   type="text"
                   name="search"
                   id="search"
                   placeholder="Search"
                 />
-              </div>
+              </div> */}
               <Topics
                 passedTopics={passedTopics}
                 setPassedTopic={setPassedTopic}

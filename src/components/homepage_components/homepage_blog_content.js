@@ -4,7 +4,7 @@ const blogContent = (e) => {
   return (
     <div>
       <div className="content-heading">
-        <Link
+        {/* <Link
           to={{
             pathname: "/comment",
             aboutProps: {
@@ -13,7 +13,17 @@ const blogContent = (e) => {
           }}
         >
           <p>{e.content.title}</p>
-        </Link>
+        </Link> */}
+        <div
+        /* to={{
+            pathname: "/comment",
+            aboutProps: {
+              data: e.content.content,
+            },
+          }} */
+        >
+          <p>{e.content.title}</p>
+        </div>
       </div>
 
       <div className="content-time">

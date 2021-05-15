@@ -78,7 +78,7 @@ function CommentPage() {
           </div>
         </div>
 
-        <div className="commentPageDetails statsContainer">
+        {/*  <div className="commentPageDetails statsContainer">
           <div>
             <span>
               <i className="fa fa-thumbs-up" aria-hidden="true"></i>{" "}
@@ -99,7 +99,7 @@ function CommentPage() {
             </span>
             Blog
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="footer">
         <div className="footer-contact">

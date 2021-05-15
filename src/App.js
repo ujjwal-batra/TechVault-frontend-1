@@ -17,7 +17,7 @@ function App() {
       {/* Login Page */}
       <Route path="/login" exact render={(props) => <Login />} />
       {/* Comment Page */}
-      <Route path="/comment" exact render={(props) => <CommentPage />} />
+      {/* <Route path="/comment" exact render={(props) => <CommentPage />} /> */}
     </div>
   );
 }

@@ -13,7 +13,7 @@ const header = () => {
           </span>
         </div>
         {/* Login Signup */}
-        <div className="headerLinks">
+        {/* <div className="headerLinks">
           <span className="loginButtonHeader">
             <span>
               <Link className="loginButton" to="/login">
@@ -26,7 +26,7 @@ const header = () => {
               </Link>
             </span>
           </span>
-        </div>
+        </div> */}
       </header>
     </div>
   );
