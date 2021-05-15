@@ -4,6 +4,12 @@
 
 * Command you have to run : `docker run -p 8080:8080 techvaulthub/techvault:May1-2`
 
+* [Docker Image of Master Branch](https://hub.docker.com/r/techvaulthub/techvault-frontend/tags?page=1&ordering=last_updated) :
+
+```sh
+docker pull techvaulthub/techvault-frontend:master
+```
+
 ## Local SetUp
 
 - Clone The Repo.
