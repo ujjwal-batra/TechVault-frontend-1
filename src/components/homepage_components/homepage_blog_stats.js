@@ -1,7 +1,8 @@
 import { FaRegThumbsUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const blogStats = (e) => {
-  const type = e.stats.type.charAt(0).toUpperCase() + e.stats.type.slice(1);;
+  const type = e.stats.type.charAt(0).toUpperCase() + e.stats.type.slice(1);
   return (
     <div className="statsContainer">
       {/* <div className="like-container">
@@ -18,11 +19,19 @@ const blogStats = (e) => {
         {e.stats.comments}
       </div>
       <br></br> */}
+      <br></br>
       <div>
         <span>
           <i className="fa fa-book" aria-hidden="true"></i>{" "}
         </span>
         {type}
+      </div>
+      <br></br>
+      <div>
+        <span>
+          <i className="fa fa-link" aria-hidden="false"></i>{" "}
+        </span>
+        <a href={e.stats.link}>Link</a>
       </div>
     </div>
   );
