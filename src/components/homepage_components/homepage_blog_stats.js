@@ -28,10 +28,12 @@ const blogStats = (e) => {
       </div>
       <br></br>
       <div>
-        <span>
-          <i className="fa fa-link" aria-hidden="false"></i>{" "}
-        </span>
-        <a href={e.stats.link}>Link</a>
+        <a href={e.stats.link} style={{ color: "#fff" }}>
+          <span>
+            <i className="fa fa-link" aria-hidden="false"></i>{" "}
+          </span>
+          Link
+        </a>
       </div>
     </div>
   );
