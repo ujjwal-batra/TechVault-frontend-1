@@ -68,7 +68,7 @@ const MainContent = (fromSiblings) => {
             keywords: data[i].keywords,
             imgLink: imgLink,
             commentLink: "comment/" + data[i].id,
-            type: data[i].type
+            type: data[i].type,
           };
           if (blog.indexOf(x) === -1) {
             blog.push(x);
@@ -111,7 +111,7 @@ const MainContent = (fromSiblings) => {
           keywords: res.data[i].keywords,
           imgLink: imgLink,
           commentLink: "comment/" + res.data[i].id,
-          type: res.data[i].type
+          type: res.data[i].type,
         };
         if (blog.indexOf(x) === -1) {
           blog.push(x);

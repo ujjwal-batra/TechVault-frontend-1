@@ -22,7 +22,9 @@ const blogContent = (e) => {
             },
           }} */
         >
-          <a href={e.content.link}><p>{e.content.title}</p></a>
+          <a href={e.content.link}>
+            <p>{e.content.title}</p>
+          </a>
         </div>
       </div>
 
@@ -32,9 +34,11 @@ const blogContent = (e) => {
         </p>
       </div>
       <div className="content-description">
-        <p>{e.content.blogAbstract} 
-        <br />
-        <a href={e.content.link}> [Read more...]</a></p>
+        <p>
+          {e.content.blogAbstract}
+          <br />
+          <a href={e.content.link}> [Read more...]</a>
+        </p>
       </div>
     </div>
   );
