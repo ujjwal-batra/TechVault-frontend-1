@@ -39,8 +39,8 @@ const MainContent = (fromSiblings) => {
     fetchMoreListItems();
   }, [isFetching]);
 
-  function getBlogRequest(link) {
-    fetch(link)
+  async function getBlogRequest(link) {
+    await fetch(link)
       .then((results) => results.json())
       .then((data) => {
         for (var i = 0; i < data.length; i++) {
@@ -78,8 +78,8 @@ const MainContent = (fromSiblings) => {
       });
   }
 
-  function postBlogRequest(details, link) {
-    axios({
+  async function postBlogRequest(details, link) {
+    await axios({
       method: "POST",
       url: link,
       data: details,

@@ -27,9 +27,9 @@ const RightTags = ({ setPassedTopic }) => {
   });
 
   // fetch call to get keywords
-  React.useEffect(() => {
+  React.useEffect(async () => {
     try {
-      fetch("http://localhost:8080/home/keywordsCount")
+      await fetch("http://localhost:8080/home/keywordsCount")
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {

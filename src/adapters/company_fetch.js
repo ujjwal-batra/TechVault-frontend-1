@@ -28,9 +28,9 @@ const RightTags = ({ setPassedCompany }) => {
   });
 
   // fetching list of companies
-  React.useEffect(() => {
+  React.useEffect(async () => {
     try {
-      fetch("http://localhost:8080/home/blogsCount")
+      await fetch("http://localhost:8080/home/blogsCount")
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {

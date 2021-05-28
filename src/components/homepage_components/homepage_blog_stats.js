@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 
 const blogStats = (e) => {
   const type = e.stats.type.charAt(0).toUpperCase() + e.stats.type.slice(1);
+  var typeIcon;
+  if(type == "Blog")
+    typeIcon = "";
+  else 
+    typeIcon = "";
   return (
     <div className="statsContainer">
       {/* <div className="like-container">
@@ -28,7 +33,7 @@ const blogStats = (e) => {
       </div>
       <br></br>
       <div>
-        <a href={e.stats.link} style={{ color: "#fff" }}>
+        <a href={e.stats.link} style={{ color: "#fff" }} target="_blank">
           <span>
             <i className="fa fa-link" aria-hidden="false"></i>{" "}
           </span>
