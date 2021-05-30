@@ -37,7 +37,10 @@ const blogContent = (e) => {
         <p>
           {e.content.blogAbstract}
           <br />
-          <a href={e.content.link} target="_blank"> [Read more...]</a>
+          <a href={e.content.link} target="_blank">
+            {" "}
+            [Read more...]
+          </a>
         </p>
       </div>
     </div>
