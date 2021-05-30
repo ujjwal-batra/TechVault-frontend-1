@@ -38,6 +38,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          file: ./Dockerfile.prod
           push: true
           tags: ${{ secrets.DOCKER_IMAGE }}:${{ steps.get_version.outputs.DOCKER_IMAGE_TAG }}
       - name: Image digest
