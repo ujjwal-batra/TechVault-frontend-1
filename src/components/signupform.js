@@ -38,18 +38,16 @@ function App() {
       body: JSON.stringify(details),
     };
     try {
-      fetch("http://localhost:8080/user/register", requestOptions).then(
-        async (response) => {
-          const data = await response.json();
+      fetch("/:8080/user/register", requestOptions).then(async (response) => {
+        const data = await response.json();
 
-          // check for error response
-          if (!response.ok) {
-            // get error message from body or default to response status
-            const error = (data && data.message) || response.status;
-            console.log(error);
-          } else alert(response);
-        }
-      );
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response status
+          const error = (data && data.message) || response.status;
+          console.log(error);
+        } else alert(response);
+      });
     } catch (err) {
       alert(err); // Failed to fetch
     }
