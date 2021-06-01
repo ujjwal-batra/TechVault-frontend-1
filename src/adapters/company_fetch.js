@@ -30,7 +30,7 @@ const RightTags = ({ setPassedCompany }) => {
   // fetching list of companies
   React.useEffect(async () => {
     try {
-      await fetch("http://localhost:8080/home/blogsCount")
+      await fetch("http://3.142.242.194:8080/home/blogsCount")
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {

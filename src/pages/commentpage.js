@@ -10,7 +10,7 @@ function CommentPage() {
 
   React.useEffect(() => {
     try {
-      let link = "http://localhost:8080/comment/987";
+      let link = "http://3.142.242.194:8080/comment/987";
       fetch(link)
         .then((results) => results.json())
         .then((data) => {
