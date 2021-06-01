@@ -133,7 +133,7 @@ const MainContent = (fromSiblings) => {
       // scrolled post request
       else {
         var details;
-        if (prevLink === "/:8080/search/keyword/")
+        if (prevLink === "http://localhost:8080/search/keyword/")
           details = { searchWords: fromSiblings.passedTopics };
         else details = { searchWords: fromSiblings.passedCompany };
         var link = prevLink + "?pageNo=" + loadNo;
@@ -162,7 +162,7 @@ const MainContent = (fromSiblings) => {
         fromSiblings.passedTopics.length === 0 &&
         fromSiblings.passedCompany.length === 0
       ) {
-        link = "/:8080/home/" + fromSiblings.selevtedNav;
+        link = "http://localhost:8080/home/" + fromSiblings.selevtedNav;
         post_req = false;
         setPostReq(false);
         setLoadNo(1);
@@ -170,7 +170,7 @@ const MainContent = (fromSiblings) => {
         fromSiblings.passedCompany.length !== 0 &&
         fromSiblings.passedTopics.length === 0
       ) {
-        link = "/:8080/search/company/";
+        link = "http://localhost:8080/search/company/";
         post_req = true;
         setPostReq(true);
         setLoadNo(1);
@@ -178,12 +178,12 @@ const MainContent = (fromSiblings) => {
         fromSiblings.passedCompany.length === 0 &&
         fromSiblings.passedTopics.length !== 0
       ) {
-        link = "/:8080/search/keyword/";
+        link = "http://localhost:8080/search/keyword/";
         post_req = true;
         setPostReq(true);
         setLoadNo(1);
       } else {
-        link = "/:8080/search/keyword/";
+        link = "http://localhost:8080/search/keyword/";
         cond = true;
         post_req = true;
         setPostReq(true);
@@ -199,7 +199,7 @@ const MainContent = (fromSiblings) => {
       else {
         setPrevLink(link);
         var details;
-        if (link === "/:8080/search/keyword/")
+        if (link === "http://localhost:8080/search/keyword/")
           details = { searchWords: fromSiblings.passedTopics };
         else details = { searchWords: fromSiblings.passedCompany };
         postBlogRequest(details, link);
