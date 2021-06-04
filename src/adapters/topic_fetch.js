@@ -29,7 +29,7 @@ const RightTags = ({ setPassedTopic }) => {
   // fetch call to get keywords
   React.useEffect(async () => {
     try {
-      await fetch("http://3.142.242.194:8080/home/keywordsCount")
+      await fetch("http://3.141.157.1:8080/home/keywordsCount")
         .then((results) => results.json())
         .then((data) => {
           for (var i = 0; i < data.length; i++) {
