@@ -14,6 +14,46 @@ const MainContent = (fromSiblings) => {
   const [isFetching, setIsFetching] = useState(false);
   const [postReq, setPostReq] = useState(false);
 
+  const SelectedTags = () => {
+    if(fromSiblings.passedTopics.length == 0 && fromSiblings.passedCompany.length == 0)
+      return null;
+    else if(fromSiblings.passedTopics.length != 0)
+      return (
+        <div className="selectedTagsHeading">
+          Showing results for Topic : 
+          {fromSiblings.passedTopics.map((tags) => (
+            <span className="selectedTagsValue">&nbsp; {tags}</span>
+          ))}
+        </div>
+      )
+    else{
+      return (
+        <div className="selectedTagsHeading">
+          Showing results for Company : 
+          {fromSiblings.passedCompany.map((tags) => (
+            <span className="selectedTagsValue">&nbsp; {tags}</span>
+          ))}
+        </div>
+      )
+    }
+  }
+
+  const PreLoader = () => {
+    return (
+      // <div className="loading">
+      //   <div className="loader-ellips">
+      //     <span className="loader-ellips__dot"></span>
+      //     <span className="loader-ellips__dot"></span>
+      //     <span className="loader-ellips__dot"></span>
+      //     <span className="loader-ellips__dot"></span>
+      //   </div>
+      // </div>
+      <div>
+        <img src='./load.svg' alt="loading..." width="80px"/>
+      </div>
+    )
+  } 
+
   // To set selected topics
   // const onClickTopic = (e) => {
   //   fromSiblings.setPassedTopic((arr) => [...arr, e]);
@@ -211,6 +251,7 @@ const MainContent = (fromSiblings) => {
 
   return (
     <div>
+      <div><SelectedTags /></div>
       {blog.map((e) => (
         <div className="container">
           <div className="flex_box">
@@ -226,20 +267,14 @@ const MainContent = (fromSiblings) => {
                 })}
               </div>
             </div>
+            
             {/* Likes, comment type */}
             <BlogStats stats={e} />
           </div>
         </div>
       ))}
-
-      {/* Loader */}
-      <div className="loading">
-        <div className="loader-ellips">
-          <span className="loader-ellips__dot"></span>
-          <span className="loader-ellips__dot"></span>
-          <span className="loader-ellips__dot"></span>
-          <span className="loader-ellips__dot"></span>
-        </div>
+      <div>
+        <PreLoader />
       </div>
     </div>
   );

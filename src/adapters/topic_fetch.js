@@ -15,6 +15,11 @@ const RightTags = ({ setPassedTopic }) => {
   const onClickShowMore = () => {
     setTopicVisible(topicVisible + 10);
   };
+  // show less for topics
+  const onClickShowLess = () => {
+    if(topicVisible > 5)
+      setTopicVisible(topicVisible - 10);
+  };
 
   // search input tracker
   const onchange = (e) => {
@@ -86,13 +91,23 @@ const RightTags = ({ setPassedTopic }) => {
           type={type}
         />
 
-        {/* show more button */}
-        <div className="showMoreButton" onClick={() => onClickShowMore()}>
-          <span className="text">
-            Show More &nbsp;
-            <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
-          </span>
+        <div className="showButtons">
+          {/* show more button */}
+          <div className="showMoreButton" onClick={() => onClickShowMore()}>
+            <span className="showMoreButtonSpan">
+              Show More &nbsp;
+              <i className="fa fa-chevron-circle-down" aria-hidden="true"></i>
+            </span>
+          </div>
+          {/* show less button */}
+          <div className="showMoreButton" onClick={() => onClickShowLess()}>
+            <span className="showLessButtonSpan">
+              Show Less &nbsp;
+              <i className="fa fa-chevron-circle-up" aria-hidden="true"></i>
+            </span>
+          </div>
         </div>
+
       </div>
     </div>
   );
