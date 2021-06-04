@@ -38,7 +38,7 @@ function App() {
       body: JSON.stringify(details),
     };
     try {
-      fetch("http://3.142.242.194:8080/user/register", requestOptions).then(
+      fetch("http://3.141.157.1:8080/user/register", requestOptions).then(
         async (response) => {
           const data = await response.json();
 
