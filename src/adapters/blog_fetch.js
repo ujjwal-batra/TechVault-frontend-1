@@ -41,7 +41,7 @@ const MainContent = (fromSiblings) => {
   const PreLoader = () => {
     return (
       <div>
-        <img src='./load.svg' alt="loading..." width="80px"/>
+        <img src="load.svg" alt="loader..." width="70px"/>
       </div>
     )
   } 
