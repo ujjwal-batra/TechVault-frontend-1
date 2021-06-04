@@ -40,14 +40,6 @@ const MainContent = (fromSiblings) => {
 
   const PreLoader = () => {
     return (
-      // <div className="loading">
-      //   <div className="loader-ellips">
-      //     <span className="loader-ellips__dot"></span>
-      //     <span className="loader-ellips__dot"></span>
-      //     <span className="loader-ellips__dot"></span>
-      //     <span className="loader-ellips__dot"></span>
-      //   </div>
-      // </div>
       <div>
         <img src='./load.svg' alt="loading..." width="80px"/>
       </div>
